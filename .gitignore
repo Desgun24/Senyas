@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.streamlit/secrets.toml
+.env
+
+# Generated data and model artifacts
+data/processed/
+artifacts/*.joblib
+artifacts/*.json
+artifacts/*.csv
+dataset/
+
+# Temporary PDF inspection files
+tmp/
+

@@ -1,0 +1,18 @@
+id,label,category,filipino,synonyms,beginner_order
+0,GOOD MORNING,GREETING,magandang umaga,good morning|magandang umaga,1
+1,GOOD AFTERNOON,GREETING,magandang hapon,good afternoon|magandang hapon,2
+2,GOOD EVENING,GREETING,magandang gabi,good evening|magandang gabi,3
+3,HELLO,GREETING,kumusta,hello|hi|kumusta|kamusta,4
+4,HOW ARE YOU,GREETING,kumusta ka,how are you|kumusta ka|kamusta ka,5
+5,IM FINE,GREETING,mabuti ako,i am fine|im fine|i'm fine|mabuti ako|ayos lang ako,6
+6,NICE TO MEET YOU,GREETING,ikinagagalak kitang makilala,nice to meet you|ikinagagalak kitang makilala|masaya akong makilala ka,7
+7,THANK YOU,GREETING,salamat,thank you|thanks|salamat,8
+8,YOURE WELCOME,GREETING,walang anuman,youre welcome|you're welcome|you are welcome|walang anuman,9
+9,SEE YOU TOMORROW,GREETING,kita tayo bukas,see you tomorrow|kita tayo bukas|magkita tayo bukas,10
+10,UNDERSTAND,SURVIVAL,naiintindihan,understand|naiintindihan|naintindihan,11
+11,DON’T UNDERSTAND,SURVIVAL,hindi naiintindihan,dont understand|don't understand|do not understand|hindi naiintindihan,12
+14,NO,SURVIVAL,hindi,no|hindi,13
+15,YES,SURVIVAL,oo,yes|oo|opo,14
+17,CORRECT,SURVIVAL,tama,correct|right|tama,15
+16,WRONG,SURVIVAL,mali,wrong|incorrect|mali,16
+

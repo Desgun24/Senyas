@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Senyas: setup",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Senyas: prepare manifest",
+      "type": "shell",
+      "command": ".venv\\Scripts\\python.exe scripts/prepare_dataset.py --dataset dataset",
+      "problemMatcher": []
+    },
+    {
+      "label": "Senyas: extract features",
+      "type": "shell",
+      "command": ".venv\\Scripts\\python.exe scripts/extract_features.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Senyas: train and evaluate",
+      "type": "shell",
+      "command": ".venv\\Scripts\\python.exe scripts/train_model.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Senyas: run app",
+      "type": "shell",
+      "command": ".venv\\Scripts\\streamlit.exe run app.py",
+      "problemMatcher": [],
+      "isBackground": true
+    }
+  ]
+}
+
