@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Senyas
 
 Senyas is a beginner Filipino Sign Language (FSL) learning prototype built around the FSL105 video dataset. It combines replayable lessons, bilingual vocabulary practice, video-based sign recognition, uncertainty feedback, an accuracy-focused Extra Trees ensemble, and exact rule traces from a retained Decision Tree baseline.
@@ -104,3 +105,6 @@ The software is a research prototype and learning aid, not an authoritative inte
 - test accessibility with Deaf and hard-of-hearing users.
 
 See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for the report-ready methodology and [docs/DATASET_CARD.md](docs/DATASET_CARD.md) for the current data audit.
+=======
+# Senyas
+>>>>>>> 9e56284431d8c9fb8e6f11a45163d172621c0adf
