@@ -290,6 +290,56 @@ class LandmarkExtractor:
             raise AssertionError(f"Feature-name mismatch: {len(vector)} values vs {len(self.base_names)} names")
         return vector
 
+    def extract_frames(
+        self, frames: Sequence[np.ndarray], duration_seconds: float
+    ) -> tuple[np.ndarray, ExtractionInfo]:
+        """Use the existing feature schema on a sampled browser-camera attempt."""
+        if not len(frames) or not np.isfinite(duration_seconds) or duration_seconds <= 0:
+            raise ValueError("A complete camera recording with valid timing is required")
+        started = time.perf_counter()
+        targets = np.linspace(0, len(frames) - 1, min(len(frames), self.max_frames), dtype=int)
+        vectors = []
+        for index in targets:
+            frame = frames[index]
+            height, width = frame.shape[:2]
+            scale = min(1.0, self.max_image_side / max(height, width))
+            if scale < 1.0:
+                frame = self.cv2.resize(frame, None, fx=scale, fy=scale)
+            rgb = self.cv2.cvtColor(frame, self.cv2.COLOR_BGR2RGB)
+            rgb.flags.writeable = False
+            vectors.append(self._frame_vector(self.holistic.process(rgb)))
+        return self._finish_extraction(
+            vectors, len(frames), (len(frames) - 1) / duration_seconds, duration_seconds, started
+        )
+
+    def _finish_extraction(
+        self,
+        frame_vectors: list[np.ndarray],
+        frames_total: int,
+        fps: float,
+        duration_seconds: float,
+        started: float,
+    ) -> tuple[np.ndarray, ExtractionInfo]:
+        sequence = np.vstack(frame_vectors)
+        left_present = sequence[:, self.base_names.index("left.present")] > 0.5
+        right_present = sequence[:, self.base_names.index("right.present")] > 0.5
+        hand_frames = int(np.logical_or(left_present, right_present).sum())
+        if hand_frames < self.min_hand_frames:
+            raise ValueError(
+                f"Only {hand_frames} sampled frames contained a detected hand; "
+                f"at least {self.min_hand_frames} are required"
+            )
+        info = ExtractionInfo(
+            frames_total=frames_total,
+            frames_sampled=len(frame_vectors),
+            hand_frames=hand_frames,
+            hand_detection_rate=hand_frames / len(frame_vectors),
+            fps=fps,
+            duration_seconds=duration_seconds,
+            extraction_ms=(time.perf_counter() - started) * 1000,
+        )
+        return summarize_sequence(sequence), info
+
     def extract_video(self, video_path: str | Path) -> tuple[np.ndarray, ExtractionInfo]:
         path = Path(video_path)
         capture = self.cv2.VideoCapture(str(path))
@@ -327,28 +377,10 @@ class LandmarkExtractor:
 
         if not frame_vectors:
             raise ValueError(f"No frames could be decoded from {path}")
-        sequence = np.vstack(frame_vectors)
-        left_present = sequence[:, self.base_names.index("left.present")] > 0.5
-        right_present = sequence[:, self.base_names.index("right.present")] > 0.5
-        hand_frames = int(np.logical_or(left_present, right_present).sum())
-        if hand_frames < self.min_hand_frames:
-            raise ValueError(
-                f"Only {hand_frames} sampled frames contained a detected hand; "
-                f"at least {self.min_hand_frames} are required"
-            )
-
-        elapsed_ms = (time.perf_counter() - started) * 1000
         effective_total = frame_total if frame_total > 0 else frame_index
-        info = ExtractionInfo(
-            frames_total=effective_total,
-            frames_sampled=len(frame_vectors),
-            hand_frames=hand_frames,
-            hand_detection_rate=hand_frames / len(frame_vectors),
-            fps=fps,
-            duration_seconds=(effective_total / fps) if fps > 0 else 0.0,
-            extraction_ms=elapsed_ms,
+        return self._finish_extraction(
+            frame_vectors, effective_total, fps, (effective_total / fps) if fps > 0 else 0.0, started
         )
-        return summarize_sequence(sequence), info
 
 
 def extract_manifest(

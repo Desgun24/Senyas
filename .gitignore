@@ -1,4 +1,14 @@
 .venv/
+.venv*/
+venv/
+env/
+node_modules/
+.runtime/
+dist/
+build/
+outputs/
+data/progress.json
+*.log
 __pycache__/
 *.py[cod]
 .pytest_cache/

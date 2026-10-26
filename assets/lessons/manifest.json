@@ -1,0 +1,1055 @@
+{
+  "source_labels": "config/labels.csv",
+  "videos": [
+    {
+      "id": 0,
+      "label": "GOOD MORNING",
+      "category": "GREETING",
+      "video": "assets/lessons/000.mp4",
+      "source_clip": "clips/0/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "7ddb42cac8df45fccaa78d055a744f518f22a3286e6dcd5058660656559cc4cc",
+      "bytes": 196859
+    },
+    {
+      "id": 1,
+      "label": "GOOD AFTERNOON",
+      "category": "GREETING",
+      "video": "assets/lessons/001.mp4",
+      "source_clip": "clips/1/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "0bc0f69495676e6775c89a3c4e877d36f20c0eccd3096ecf6d73151861d505be",
+      "bytes": 149059
+    },
+    {
+      "id": 2,
+      "label": "GOOD EVENING",
+      "category": "GREETING",
+      "video": "assets/lessons/002.mp4",
+      "source_clip": "clips/2/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d8058be82ca465e0692efbb50294a973bd14dfc424e379eebf155338b23d4c0f",
+      "bytes": 153987
+    },
+    {
+      "id": 3,
+      "label": "HELLO",
+      "category": "GREETING",
+      "video": "assets/lessons/003.mp4",
+      "source_clip": "clips/3/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "ab7dcf1f7835b55c7369702bde28d990a7b2a4761d226d10476d48a9a3ae80f5",
+      "bytes": 135432
+    },
+    {
+      "id": 4,
+      "label": "HOW ARE YOU",
+      "category": "GREETING",
+      "video": "assets/lessons/004.mp4",
+      "source_clip": "clips/4/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "88d721725d44a37da674afcf51f398fe985df93b953c51d1fcd9aaff70be2621",
+      "bytes": 192869
+    },
+    {
+      "id": 5,
+      "label": "IM FINE",
+      "category": "GREETING",
+      "video": "assets/lessons/005.mp4",
+      "source_clip": "clips/5/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "6445d745006d3ffd588fbd2d2db52a87e3da8c0bcda6f7162b4f89e64c1cd85a",
+      "bytes": 145494
+    },
+    {
+      "id": 6,
+      "label": "NICE TO MEET YOU",
+      "category": "GREETING",
+      "video": "assets/lessons/006.mp4",
+      "source_clip": "clips/6/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "06cb0f6aad6c72cdf2256efa953c0853c9063fd8ae544c83a12c750b1f1675d4",
+      "bytes": 210756
+    },
+    {
+      "id": 7,
+      "label": "THANK YOU",
+      "category": "GREETING",
+      "video": "assets/lessons/007.mp4",
+      "source_clip": "clips/7/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f6cce46b6c832c6bce36df3773710cc1b28a6412febe1c1907db1579133f293a",
+      "bytes": 161542
+    },
+    {
+      "id": 8,
+      "label": "YOURE WELCOME",
+      "category": "GREETING",
+      "video": "assets/lessons/008.mp4",
+      "source_clip": "clips/8/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "a2bd517ab37bcbd412edf4f0d861a862bc0aa44932a23523545881e1588516f7",
+      "bytes": 142128
+    },
+    {
+      "id": 9,
+      "label": "SEE YOU TOMORROW",
+      "category": "GREETING",
+      "video": "assets/lessons/009.mp4",
+      "source_clip": "clips/9/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "ddd8a44e4331037b25296c011cb2834e5f2406700b66cbf3091e1493f8aef9cc",
+      "bytes": 166750
+    },
+    {
+      "id": 10,
+      "label": "UNDERSTAND",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/010.mp4",
+      "source_clip": "clips/10/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "16f0072c616a573e155d13bb19d7d9a03c4995f8231a8975586e13e49465b544",
+      "bytes": 159282
+    },
+    {
+      "id": 11,
+      "label": "DON\u2019T UNDERSTAND",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/011.mp4",
+      "source_clip": "clips/11/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "4e6e25605a7f1ec83ed1d27452ac2ce8b252f22a557928622d014504d6a46680",
+      "bytes": 171939
+    },
+    {
+      "id": 12,
+      "label": "KNOW",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/012.mp4",
+      "source_clip": "clips/12/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "c1848f84e922f58c44248a6f45419c80fab196990636ccf1c0748b6168d9ea82",
+      "bytes": 148728
+    },
+    {
+      "id": 13,
+      "label": "DON\u2019T KNOW",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/013.mp4",
+      "source_clip": "clips/13/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "900c6ecb2469f274e07840544f9c0af947e9646bbbbe2198963ede8c4ea9a2fd",
+      "bytes": 179097
+    },
+    {
+      "id": 14,
+      "label": "NO",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/014.mp4",
+      "source_clip": "clips/14/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "83693d0db10d9263e9f7c9cef0834650ff6c2075c9b449a15e390d73dadd305e",
+      "bytes": 153056
+    },
+    {
+      "id": 15,
+      "label": "YES",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/015.mp4",
+      "source_clip": "clips/15/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "c63cee4f2de51328510d219e10d311048671bd6c379b9e99d61f4853d71d0029",
+      "bytes": 142515
+    },
+    {
+      "id": 16,
+      "label": "WRONG",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/016.mp4",
+      "source_clip": "clips/16/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "235b818ba9d20bcf65ec0a28200f9d6fbcfd5fb35df9e1eafc82b53608a2a61a",
+      "bytes": 167338
+    },
+    {
+      "id": 17,
+      "label": "CORRECT",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/017.mp4",
+      "source_clip": "clips/17/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "0d98531228dc27c591bf4cf68dac0187e83d3cd702e05eff64fff7a5df62e783",
+      "bytes": 139599
+    },
+    {
+      "id": 18,
+      "label": "SLOW",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/018.mp4",
+      "source_clip": "clips/18/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "03ddfff228355c508b4a9bfdff6edf47bbbe3236022fb1dc579bbf9f8c754d64",
+      "bytes": 164997
+    },
+    {
+      "id": 19,
+      "label": "FAST",
+      "category": "SURVIVAL",
+      "video": "assets/lessons/019.mp4",
+      "source_clip": "clips/19/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "4f8a2a716ead9b8c227996e688682bf8ac20891e1c15babd80473782c37f24d1",
+      "bytes": 111229
+    },
+    {
+      "id": 20,
+      "label": "ONE",
+      "category": "NUMBER",
+      "video": "assets/lessons/020.mp4",
+      "source_clip": "clips/20/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "b16d535e84834271d6b6ab59acab7bfc6607fab97a4e45473fea460ac5085ee5",
+      "bytes": 140928
+    },
+    {
+      "id": 21,
+      "label": "TWO",
+      "category": "NUMBER",
+      "video": "assets/lessons/021.mp4",
+      "source_clip": "clips/21/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "0a5e0cb2ee4a914970acb99617d387999a9242d542eb3b20dd9538084900b836",
+      "bytes": 121270
+    },
+    {
+      "id": 22,
+      "label": "THREE",
+      "category": "NUMBER",
+      "video": "assets/lessons/022.mp4",
+      "source_clip": "clips/22/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "5e5efbfa7f87a95bfa0b9e36ba6d8e03d3ea006e10badd563544bd574463e79a",
+      "bytes": 154009
+    },
+    {
+      "id": 23,
+      "label": "FOUR",
+      "category": "NUMBER",
+      "video": "assets/lessons/023.mp4",
+      "source_clip": "clips/23/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "edc2707bfa383c95455bf4294cc44cc3e76ae2a738e86d940566753192f7bc05",
+      "bytes": 123056
+    },
+    {
+      "id": 24,
+      "label": "FIVE",
+      "category": "NUMBER",
+      "video": "assets/lessons/024.mp4",
+      "source_clip": "clips/24/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "65881515e8f8222bb7a275a544a700447992eb9779410971fcc376c8854c70ee",
+      "bytes": 149007
+    },
+    {
+      "id": 25,
+      "label": "SIX",
+      "category": "NUMBER",
+      "video": "assets/lessons/025.mp4",
+      "source_clip": "clips/25/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "83b417a1612e3e5a688737fa28324d5e09e86091bff8383812b68e30075142df",
+      "bytes": 131813
+    },
+    {
+      "id": 26,
+      "label": "SEVEN",
+      "category": "NUMBER",
+      "video": "assets/lessons/026.mp4",
+      "source_clip": "clips/26/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f44e1d40407b0469b4ffdc4c980b9b7c008f45ddab3f9e9f9c9eb7f45d1b2a8d",
+      "bytes": 107811
+    },
+    {
+      "id": 27,
+      "label": "EIGHT",
+      "category": "NUMBER",
+      "video": "assets/lessons/027.mp4",
+      "source_clip": "clips/27/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "bd03aaad0931ce7a70312619cf832335922f6f6d89741265b9028fd4ee8fb005",
+      "bytes": 109203
+    },
+    {
+      "id": 28,
+      "label": "NINE",
+      "category": "NUMBER",
+      "video": "assets/lessons/028.mp4",
+      "source_clip": "clips/28/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "bfec228768a7c4c487b74d354f0fd7b87e06e5fd95794e1601ceef7373138359",
+      "bytes": 130630
+    },
+    {
+      "id": 29,
+      "label": "TEN",
+      "category": "NUMBER",
+      "video": "assets/lessons/029.mp4",
+      "source_clip": "clips/29/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "2fcc577d76ec8329d4cbae60093ec7c6d1001ac75b4c48bf3c3c02dd7a00f5c0",
+      "bytes": 119090
+    },
+    {
+      "id": 30,
+      "label": "JANUARY",
+      "category": "CALENDAR",
+      "video": "assets/lessons/030.mp4",
+      "source_clip": "clips/30/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "8710c4dda235b33e97ac99e3492cb9276ccc4ac7a16a3506c32583d4bc0ca932",
+      "bytes": 146256
+    },
+    {
+      "id": 31,
+      "label": "FEBRUARY",
+      "category": "CALENDAR",
+      "video": "assets/lessons/031.mp4",
+      "source_clip": "clips/31/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "af192051daa699e178c4d3f397b8f5c10868f11e43113b403ae687c0b1f1f168",
+      "bytes": 171039
+    },
+    {
+      "id": 32,
+      "label": "MARCH",
+      "category": "CALENDAR",
+      "video": "assets/lessons/032.mp4",
+      "source_clip": "clips/32/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d7152691a5db19ef9d774fc1c54468c79e88ae6a27f031959882ba9e3bc3fa20",
+      "bytes": 149522
+    },
+    {
+      "id": 33,
+      "label": "APRIL",
+      "category": "CALENDAR",
+      "video": "assets/lessons/033.mp4",
+      "source_clip": "clips/33/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "130a56fc0f93be6851a26ebb79a09025612b4198e438b3dfce4cbd13428b5d66",
+      "bytes": 161603
+    },
+    {
+      "id": 34,
+      "label": "MAY",
+      "category": "CALENDAR",
+      "video": "assets/lessons/034.mp4",
+      "source_clip": "clips/34/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "15b97c3bb2490d50c0cd898f01bec67ac74f62a242b49bcf53e9517294ae74be",
+      "bytes": 140856
+    },
+    {
+      "id": 35,
+      "label": "JUNE",
+      "category": "CALENDAR",
+      "video": "assets/lessons/035.mp4",
+      "source_clip": "clips/35/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "19f9203bd086262ece542138e854c63334a7bbff97fe54eb5ad1c8c70b6187ab",
+      "bytes": 142909
+    },
+    {
+      "id": 36,
+      "label": "JULY",
+      "category": "CALENDAR",
+      "video": "assets/lessons/036.mp4",
+      "source_clip": "clips/36/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "4003836b015310456756b63b7d5ec630616c0498af7dd59d990a05dfa38e3064",
+      "bytes": 93274
+    },
+    {
+      "id": 37,
+      "label": "AUGUST",
+      "category": "CALENDAR",
+      "video": "assets/lessons/037.mp4",
+      "source_clip": "clips/37/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "37eab2254e712cf59c0a32c2e6ab20f836fa46237a2bbaf837fe2f56f496dd4a",
+      "bytes": 138301
+    },
+    {
+      "id": 38,
+      "label": "SEPTEMBER",
+      "category": "CALENDAR",
+      "video": "assets/lessons/038.mp4",
+      "source_clip": "clips/38/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "60c361c803949ab31415b1eec9b6d5ebcca769d9593b55a9f8a49221728ac00a",
+      "bytes": 139462
+    },
+    {
+      "id": 39,
+      "label": "OCTOBER",
+      "category": "CALENDAR",
+      "video": "assets/lessons/039.mp4",
+      "source_clip": "clips/39/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "1533bbf92160f2b4e8046e7a9cc2e4a572cfaba00cddce964fb844a4c93c9f3a",
+      "bytes": 140985
+    },
+    {
+      "id": 40,
+      "label": "NOVEMBER",
+      "category": "CALENDAR",
+      "video": "assets/lessons/040.mp4",
+      "source_clip": "clips/40/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "af279c46773b6999bf58389da338c1ca50b50a3ca58e584efe06841c29d2b85c",
+      "bytes": 156517
+    },
+    {
+      "id": 41,
+      "label": "DECEMBER",
+      "category": "CALENDAR",
+      "video": "assets/lessons/041.mp4",
+      "source_clip": "clips/41/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "24c52b1ffbb66ef1760f33cc090e77e1c774826a1d54761734d944bd7aff4408",
+      "bytes": 157619
+    },
+    {
+      "id": 42,
+      "label": "MONDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/042.mp4",
+      "source_clip": "clips/42/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d7f79530d84fe8e680e229750dbae47efd7f7738fdd000eb6e87b17a36cda819",
+      "bytes": 149473
+    },
+    {
+      "id": 43,
+      "label": "TUESDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/043.mp4",
+      "source_clip": "clips/43/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "8401f550ef972e7e099cc45ea7ea512e960a0dacdf9a382b663171385d39ef97",
+      "bytes": 154339
+    },
+    {
+      "id": 44,
+      "label": "WEDNESDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/044.mp4",
+      "source_clip": "clips/44/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "eb2b77bfc3fb1e796b98bed05ae85dfbe99685f98508b0d7f2e3ad24ec5c304e",
+      "bytes": 163552
+    },
+    {
+      "id": 45,
+      "label": "THURSDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/045.mp4",
+      "source_clip": "clips/45/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d7f074617b63e2c45ce82df6170ad46c0612692f82a43bcf111a2fa967124d88",
+      "bytes": 146940
+    },
+    {
+      "id": 46,
+      "label": "FRIDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/046.mp4",
+      "source_clip": "clips/46/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d3b518d25ac383870043349844e76a2248417f9bdcd77ca523038e48c97b5727",
+      "bytes": 152746
+    },
+    {
+      "id": 47,
+      "label": "SATURDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/047.mp4",
+      "source_clip": "clips/47/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "235412609df534f3cba0bda00b033ce085837e9e5d4cab58938ed30bbeb13dcc",
+      "bytes": 162347
+    },
+    {
+      "id": 48,
+      "label": "SUNDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/048.mp4",
+      "source_clip": "clips/48/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "6257e742c104056525d02869f3559687d317ef50400b7276da440eb7992842fa",
+      "bytes": 196397
+    },
+    {
+      "id": 49,
+      "label": "TODAY",
+      "category": "DAYS",
+      "video": "assets/lessons/049.mp4",
+      "source_clip": "clips/49/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "ea6cd6233fe0519b63b18eeb3e9372f0296b1a12a6180e2fd3e5433acbe0e96f",
+      "bytes": 145719
+    },
+    {
+      "id": 50,
+      "label": "TOMORROW",
+      "category": "DAYS",
+      "video": "assets/lessons/050.mp4",
+      "source_clip": "clips/50/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f1b8068706ac17d93d8854dd5337100fd520bdd291d583c68023cfe552976b1e",
+      "bytes": 131619
+    },
+    {
+      "id": 51,
+      "label": "YESTERDAY",
+      "category": "DAYS",
+      "video": "assets/lessons/051.mp4",
+      "source_clip": "clips/51/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "1787ec31fe503d4d98d7089a8910afb1c454c6b2901b7e629d766d9a11c7d21f",
+      "bytes": 127128
+    },
+    {
+      "id": 52,
+      "label": "FATHER",
+      "category": "FAMILY",
+      "video": "assets/lessons/052.mp4",
+      "source_clip": "clips/52/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "871b659dbd017fa492d8ea06c172b08e16c5cf4e9279bf2c1169d17db4f6ac4a",
+      "bytes": 154821
+    },
+    {
+      "id": 53,
+      "label": "MOTHER",
+      "category": "FAMILY",
+      "video": "assets/lessons/053.mp4",
+      "source_clip": "clips/53/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "e8c00b31c399854a1da07ac4f70a29d1523378bc62ea1c0dc451cda6ba834f2b",
+      "bytes": 147749
+    },
+    {
+      "id": 54,
+      "label": "SON",
+      "category": "FAMILY",
+      "video": "assets/lessons/054.mp4",
+      "source_clip": "clips/54/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "c1b557d631d4b19c38fd4f4737d3fdc2ce64784caeb5efbd8f1cd166c998aa9f",
+      "bytes": 187878
+    },
+    {
+      "id": 55,
+      "label": "DAUGHTER",
+      "category": "FAMILY",
+      "video": "assets/lessons/055.mp4",
+      "source_clip": "clips/55/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "5acb2b18ea8cce7e87504c18bb8583ad7771e414af4718d00664ddf215b5f647",
+      "bytes": 172405
+    },
+    {
+      "id": 56,
+      "label": "GRANDFATHER",
+      "category": "FAMILY",
+      "video": "assets/lessons/056.mp4",
+      "source_clip": "clips/56/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d4968bea44d845a009bb751de099e0c14d34bf5d7f37a495b763ac9ef9f47dcf",
+      "bytes": 144181
+    },
+    {
+      "id": 57,
+      "label": "GRANDMOTHER",
+      "category": "FAMILY",
+      "video": "assets/lessons/057.mp4",
+      "source_clip": "clips/57/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d75ce9607b65e21201a327019d55994e4fe2f8630cfe5e14f99a64798800affd",
+      "bytes": 136050
+    },
+    {
+      "id": 58,
+      "label": "UNCLE",
+      "category": "FAMILY",
+      "video": "assets/lessons/058.mp4",
+      "source_clip": "clips/58/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "cc72017039fac2ece03f07ae80c4482266daad1bed1af6972315b6a5e4181559",
+      "bytes": 131239
+    },
+    {
+      "id": 59,
+      "label": "AUNTIE",
+      "category": "FAMILY",
+      "video": "assets/lessons/059.mp4",
+      "source_clip": "clips/59/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "3b9a5dd071ce293bbf04e37140336f9f27bd534c2aee287ebb1cff1c98d54369",
+      "bytes": 114261
+    },
+    {
+      "id": 60,
+      "label": "COUSIN",
+      "category": "FAMILY",
+      "video": "assets/lessons/060.mp4",
+      "source_clip": "clips/60/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "5493370c4bdf5cb6852fc5efcdbf9b60fcf7bdcd39b2d5c7e713835c302722fc",
+      "bytes": 128772
+    },
+    {
+      "id": 61,
+      "label": "PARENTS",
+      "category": "FAMILY",
+      "video": "assets/lessons/061.mp4",
+      "source_clip": "clips/61/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d36ee9dacd782f3642234033c3eb2cca7bc0c7724a5244a81f4c605a5ea8cf20",
+      "bytes": 148537
+    },
+    {
+      "id": 62,
+      "label": "BOY",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/062.mp4",
+      "source_clip": "clips/62/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "1fb6b9c4906119bfeaccd3db9cdd8ad74ec8bc326d7895b4fbb51ab38f4bc753",
+      "bytes": 174252
+    },
+    {
+      "id": 63,
+      "label": "GIRL",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/063.mp4",
+      "source_clip": "clips/63/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "dc73a7907c6771548f9ee6e17b7929e644f2435eb3beae3f1898022d6ff467e8",
+      "bytes": 132141
+    },
+    {
+      "id": 64,
+      "label": "MAN",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/064.mp4",
+      "source_clip": "clips/64/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "795f663556b7da0ebb1b286cd5ad728a7b4f8f7c6bf3fe19a2558daa6fbdc9e0",
+      "bytes": 170841
+    },
+    {
+      "id": 65,
+      "label": "WOMAN",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/065.mp4",
+      "source_clip": "clips/65/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "601f358d1fe7bcd27087fea4978530e593ef55c673edea7329628c6424c349a7",
+      "bytes": 155827
+    },
+    {
+      "id": 66,
+      "label": "DEAF",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/066.mp4",
+      "source_clip": "clips/66/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "e22e1d3875e412ab1fcc1363f22351ce580cd72a320359f1448f65791af7ef44",
+      "bytes": 147521
+    },
+    {
+      "id": 67,
+      "label": "HARD OF HEARING",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/067.mp4",
+      "source_clip": "clips/67/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "b963cf1bb17941e00b70680cb9ad6120d2a853ac711b17922bd227d6b3a4c4d6",
+      "bytes": 126763
+    },
+    {
+      "id": 68,
+      "label": "WEELCHAIR PERSON",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/068.mp4",
+      "source_clip": "clips/68/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f67b0005fadff752e129eeda0706d48242cd8e2a566561a4b371ac1050639632",
+      "bytes": 153476
+    },
+    {
+      "id": 69,
+      "label": "BLIND",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/069.mp4",
+      "source_clip": "clips/69/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f5ae026f833cba9ba4f481ef6395771eaec6c2a736e2615bbd68e96ba1e93506",
+      "bytes": 155361
+    },
+    {
+      "id": 70,
+      "label": "DEAF BLIND",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/070.mp4",
+      "source_clip": "clips/70/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d9bc6f4026d2097ed0a4db8536c15b0bac73c725403e303cf6b17ca0c4b700db",
+      "bytes": 156700
+    },
+    {
+      "id": 71,
+      "label": "MARRIED",
+      "category": "RELATIONSHIPS",
+      "video": "assets/lessons/071.mp4",
+      "source_clip": "clips/71/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "a4dcf9db5100905b12d068bd51f0f015a4a476d55e536bd7c304fb50b58dfe00",
+      "bytes": 170789
+    },
+    {
+      "id": 72,
+      "label": "BLUE",
+      "category": "COLOR",
+      "video": "assets/lessons/072.mp4",
+      "source_clip": "clips/72/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "57e1e5d24ad2a4e232d789c786401080dfcb44d45c3c390a039c50d283ff97f6",
+      "bytes": 117486
+    },
+    {
+      "id": 73,
+      "label": "GREEN",
+      "category": "COLOR",
+      "video": "assets/lessons/073.mp4",
+      "source_clip": "clips/73/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "310f713a7436b0772597ac84e199a312f6f7d0d1c145b5a890d00c5580c63bf1",
+      "bytes": 124416
+    },
+    {
+      "id": 74,
+      "label": "RED",
+      "category": "COLOR",
+      "video": "assets/lessons/074.mp4",
+      "source_clip": "clips/74/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "f8db82ad2197d82e3203aa5dee8b3a66ab90e2eaad7cfd62cda3f5d9ee5d7e90",
+      "bytes": 118978
+    },
+    {
+      "id": 75,
+      "label": "BROWN",
+      "category": "COLOR",
+      "video": "assets/lessons/075.mp4",
+      "source_clip": "clips/75/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "0eff6bfe810f2acc935479ebf1de937d3094bb40fb90ab5462194f260125d88b",
+      "bytes": 192695
+    },
+    {
+      "id": 76,
+      "label": "BLACK",
+      "category": "COLOR",
+      "video": "assets/lessons/076.mp4",
+      "source_clip": "clips/76/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "e355eb40e0caaae64cda9d1d5bf429700c0a2364b2e2335fbd2f99f649f09430",
+      "bytes": 145359
+    },
+    {
+      "id": 77,
+      "label": "WHITE",
+      "category": "COLOR",
+      "video": "assets/lessons/077.mp4",
+      "source_clip": "clips/77/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "7f96c81d4077883d77d31605a1a7a230033ba1679ffc638e5bcd9cd39c416b46",
+      "bytes": 113072
+    },
+    {
+      "id": 78,
+      "label": "YELLOW",
+      "category": "COLOR",
+      "video": "assets/lessons/078.mp4",
+      "source_clip": "clips/78/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "3e8c6dc0f7f28374ef0c1938d1f406d6df9cb651db114e7a7153b0480040cf31",
+      "bytes": 125722
+    },
+    {
+      "id": 79,
+      "label": "ORANGE",
+      "category": "COLOR",
+      "video": "assets/lessons/079.mp4",
+      "source_clip": "clips/79/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "65eaa59325cc8a1a36a1ef110be32088b1f3006281979cf2708f31d69c3e489e",
+      "bytes": 122485
+    },
+    {
+      "id": 80,
+      "label": "GRAY",
+      "category": "COLOR",
+      "video": "assets/lessons/080.mp4",
+      "source_clip": "clips/80/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "172c84747c5132c7cb48763033821a4a4d27502b39418fcd317b80f9c5525111",
+      "bytes": 153982
+    },
+    {
+      "id": 81,
+      "label": "PINK",
+      "category": "COLOR",
+      "video": "assets/lessons/081.mp4",
+      "source_clip": "clips/81/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "b0d8e89403ee1b76ccdd557c1b3226fb094f426451fd9eb295edb95cff709f87",
+      "bytes": 118022
+    },
+    {
+      "id": 82,
+      "label": "VIOLET",
+      "category": "COLOR",
+      "video": "assets/lessons/082.mp4",
+      "source_clip": "clips/82/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "fb951aa6c0b534c3428d6dc75818acb48dd79e4d89eb53d05fef37da98011d3c",
+      "bytes": 133928
+    },
+    {
+      "id": 83,
+      "label": "LIGHT",
+      "category": "COLOR",
+      "video": "assets/lessons/083.mp4",
+      "source_clip": "clips/83/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "a5f88105be45705fe7b00ca1d9143e51721d592f003393c443c971c98c48a56d",
+      "bytes": 166031
+    },
+    {
+      "id": 84,
+      "label": "DARK",
+      "category": "COLOR",
+      "video": "assets/lessons/084.mp4",
+      "source_clip": "clips/84/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "5f5828eca6bd1e8418352b38005a698a4978ed53ef639c222679c12aa22f018e",
+      "bytes": 167589
+    },
+    {
+      "id": 85,
+      "label": "BREAD",
+      "category": "FOOD",
+      "video": "assets/lessons/085.mp4",
+      "source_clip": "clips/85/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "17d93310a3f9360da8a80897145bbdebfb754d28e475187b49835e8df0bffc67",
+      "bytes": 163953
+    },
+    {
+      "id": 86,
+      "label": "EGG",
+      "category": "FOOD",
+      "video": "assets/lessons/086.mp4",
+      "source_clip": "clips/86/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d725ba8af052525fc0d8add065a18d5b3751218e490d62d83ce993241c647463",
+      "bytes": 166894
+    },
+    {
+      "id": 87,
+      "label": "FISH",
+      "category": "FOOD",
+      "video": "assets/lessons/087.mp4",
+      "source_clip": "clips/87/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "9838f7b23442aba9b4c88d926bc632b89bdf7570f9c0007001a284803397b8b8",
+      "bytes": 188166
+    },
+    {
+      "id": 88,
+      "label": "MEAT",
+      "category": "FOOD",
+      "video": "assets/lessons/088.mp4",
+      "source_clip": "clips/88/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "23755526b69963a355140b228454e0dc98f06bcf38ede91a03e3634fb0ad7c6f",
+      "bytes": 161318
+    },
+    {
+      "id": 89,
+      "label": "CHICKEN",
+      "category": "FOOD",
+      "video": "assets/lessons/089.mp4",
+      "source_clip": "clips/89/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "c03bdf7a4259650c08a3f9805c800a9efb79d99133b04140eca20e5f27df9f59",
+      "bytes": 152289
+    },
+    {
+      "id": 90,
+      "label": "SPAGHETTI",
+      "category": "FOOD",
+      "video": "assets/lessons/090.mp4",
+      "source_clip": "clips/90/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "05f10988fb3a046068e12ccc13cc353fc0b1331af045c9d8c599de14b56c91e7",
+      "bytes": 186931
+    },
+    {
+      "id": 91,
+      "label": "RICE",
+      "category": "FOOD",
+      "video": "assets/lessons/091.mp4",
+      "source_clip": "clips/91/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "ce3625d88eea6cb6118d926cf8477be58da647394684a10cdd3268d007b40f2e",
+      "bytes": 140660
+    },
+    {
+      "id": 92,
+      "label": "LONGANISA",
+      "category": "FOOD",
+      "video": "assets/lessons/092.mp4",
+      "source_clip": "clips/92/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d451b638e700e537c0b6f8deccec45ad190382a6229386909ad5320c91e761f6",
+      "bytes": 149426
+    },
+    {
+      "id": 93,
+      "label": "SHRIMP",
+      "category": "FOOD",
+      "video": "assets/lessons/093.mp4",
+      "source_clip": "clips/93/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "08d89084734d8170268d30acaf6b879ce202d6bdf9df7539d5d798f3a4e7fd7c",
+      "bytes": 154828
+    },
+    {
+      "id": 94,
+      "label": "CRAB",
+      "category": "FOOD",
+      "video": "assets/lessons/094.mp4",
+      "source_clip": "clips/94/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d51fa357b8331a8eb8057825c64692ad67f3be6eab4f4a2968465900441b8f7a",
+      "bytes": 132275
+    },
+    {
+      "id": 95,
+      "label": "HOT",
+      "category": "DRINK",
+      "video": "assets/lessons/095.mp4",
+      "source_clip": "clips/95/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "94439db2eeaa2688d5bc171bfee993d0d76ad807d981b98ae7add70df4e8f8e6",
+      "bytes": 156037
+    },
+    {
+      "id": 96,
+      "label": "COLD",
+      "category": "DRINK",
+      "video": "assets/lessons/096.mp4",
+      "source_clip": "clips/96/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "d6c59d5717a029cffceabeafdb62e58bfa269d0cf6decf6ef8648cbecc7943dc",
+      "bytes": 153085
+    },
+    {
+      "id": 97,
+      "label": "JUICE",
+      "category": "DRINK",
+      "video": "assets/lessons/097.mp4",
+      "source_clip": "clips/97/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "c744994d0ffc9b5356d9bd5a07e0d2930a215672c6953d383ed931f72bd142d5",
+      "bytes": 180511
+    },
+    {
+      "id": 98,
+      "label": "MILK",
+      "category": "DRINK",
+      "video": "assets/lessons/098.mp4",
+      "source_clip": "clips/98/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "e98ec2bedc5f002723c9d0ed3b2b519866c8acb58fded5898b70d3246ad11699",
+      "bytes": 167473
+    },
+    {
+      "id": 99,
+      "label": "COFFEE",
+      "category": "DRINK",
+      "video": "assets/lessons/099.mp4",
+      "source_clip": "clips/99/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "9b590ef6cddad5430e613f9eed8acc8ae061a8ca2a1df21a8976e2760003b486",
+      "bytes": 180812
+    },
+    {
+      "id": 100,
+      "label": "TEA",
+      "category": "DRINK",
+      "video": "assets/lessons/100.mp4",
+      "source_clip": "clips/100/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "35cef67f5a7016ba785193043c38ac796be81ca3ef9730d105a0c61cd7345d0c",
+      "bytes": 175597
+    },
+    {
+      "id": 101,
+      "label": "BEER",
+      "category": "DRINK",
+      "video": "assets/lessons/101.mp4",
+      "source_clip": "clips/101/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "e9052d270c2afdf5a63be8f20ffa64840544229f6cf23a61a5e69695f2411314",
+      "bytes": 167411
+    },
+    {
+      "id": 102,
+      "label": "WINE",
+      "category": "DRINK",
+      "video": "assets/lessons/102.mp4",
+      "source_clip": "clips/102/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "7e53638e7af1c7c04c2ddd52ddd12e7be6488a2e39922fd6da22715039a33614",
+      "bytes": 163235
+    },
+    {
+      "id": 103,
+      "label": "SUGAR",
+      "category": "DRINK",
+      "video": "assets/lessons/103.mp4",
+      "source_clip": "clips/103/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "5c7f7ff1c5aa2f36dd53cd2e8c6d7c9958b26aa513b28ba4cc0b1b8dfe3299f8",
+      "bytes": 144005
+    },
+    {
+      "id": 104,
+      "label": "NO SUGAR",
+      "category": "DRINK",
+      "video": "assets/lessons/104.mp4",
+      "source_clip": "clips/104/0.MOV",
+      "audio_tracks": 0,
+      "sha256": "3493b27e04563c3d96b7d0787c0665ed1a324b0ae26680d943698132364b8d28",
+      "bytes": 156207
+    }
+  ]
+}

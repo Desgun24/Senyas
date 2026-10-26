@@ -1,110 +1,69 @@
-<<<<<<< HEAD
 # Senyas
 
-Senyas is a beginner Filipino Sign Language (FSL) learning prototype built around the FSL105 video dataset. It combines replayable lessons, bilingual vocabulary practice, video-based sign recognition, uncertainty feedback, an accuracy-focused Extra Trees ensemble, and exact rule traces from a retained Decision Tree baseline.
+Senyas is a Filipino Sign Language learning app with **105 words across 10 category levels**, silent lesson videos, live camera practice, quizzes, and saved progress. Lessons show English words with Filipino equivalents and follow **Watch → Copy → Replay → Next**.
 
-The project follows the presentation requirements:
+**Project credits:** Jeff Barrientos, Hannah Dimaculangan, and Trixie Mendoza.
 
-- preprocess an unstructured collection of sign-language video clips;
-- extract landmark, hand-shape, position, and motion features;
-- create a 70/15/15 train/validation/test split;
-- train an Extra Trees recognizer while retaining an explainable Decision Tree baseline;
-- connect recognition to lessons and practice activities;
-- evaluate accuracy, robustness, decision traces, efficiency, and usability functions; and
-- provide a basic learner-facing UI/UX.
+## Install on Windows
 
-## Important data decision
+[Download Senyas 1.0.0 for Windows x64](https://github.com/Desgun24/Senyas/releases/download/v1.0.0/Senyas-1.0.0-Windows-x64.zip) · [Release notes and checksums](https://github.com/Desgun24/Senyas/releases/tag/v1.0.0)
 
-The supplied `train.csv` and `test.csv` are not reused as the final experimental split. FSL105 clip names follow `clips/<class>/<signer-or-session>.MOV`. Senyas keeps that filename-derived signer/session in exactly one split, then searches for the closest sample-level 70/15/15 allocation. This prevents clips from the same person/session appearing in both training and testing.
+1. Get `Senyas-1.0.0-Windows-x64.zip` and extract it into a permanent writable folder, such as `Documents/Senyas`.
+2. Double-click **Install Senyas.cmd** inside the extracted folder.
+3. Wait for setup to download Python and the libraries, verify the app, and open it in your browser.
+4. Allow camera access when starting a signing activity.
 
-Confirm this filename interpretation against the dataset's original documentation before reporting the result as confirmed unseen-*signer* performance. Until confirmed, the UI and report use the more careful term "signer/session."
+Use the **Senyas** Desktop or Start menu shortcut, or **Start Senyas.cmd**, afterward. Keep the extracted folder in place because the shortcuts use it. Re-running the installer repairs missing packages without resetting progress.
 
-## Open and run in VS Code
+The installer targets **Windows x64** and needs internet for the first setup. Edge or Chrome and a working webcam are recommended. Python, Git, and the original dataset are not prerequisites. Setup uses a private `.runtime` folder without changing the system Python installation or PATH. Libraries are downloaded from their distribution services and verified against pinned SHA-256 hashes. Once setup finishes, lesson playback and recognition work locally without internet.
 
-1. Open the project folder in VS Code.
-2. Keep the existing dataset beside this project as `dataset/`, or copy `.env.example` to `.env` and set `SENYAS_DATASET_DIR`.
-3. Open **Terminal > Run Task > Senyas: setup**. The task uses Python on PATH or the Codex bundled runtime on this computer. If neither is available, install Python 3.11 or 3.12 and reopen VS Code.
-4. Run **Senyas: prepare manifest**.
-5. Run **Senyas: extract features**. Processing all 2,130 videos can take a while because MediaPipe examines up to 32 frames per clip.
-6. Run **Senyas: train and evaluate**.
-7. Run **Senyas: run app**, then open the local Streamlit address shown in the terminal.
+## Learn and practice
 
-Equivalent terminal commands:
+| Page | Activity |
+| --- | --- |
+| Home | Continue learning, open quizzes, or take the final exam. |
+| Lessons | Watch a labeled video, copy the sign using the camera, replay, and move to the next word. Each category ends with a quiz. |
+| Quiz | Select one or more categories from a checkbox grid. Questions mix signing a word and typing the meaning of a video. |
+| Final Exam | Practice all 105 words, randomly divided into 52 and 53 questions of the two types. |
+| Progress | Resume words and levels, review completed material, and inspect assessment results. |
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/setup.ps1
-.venv\Scripts\python.exe scripts/prepare_dataset.py --dataset dataset
-.venv\Scripts\python.exe scripts/extract_features.py
-.venv\Scripts\python.exe scripts/train_model.py
-.venv\Scripts\streamlit.exe run app.py
-```
+An assessment uses every selected word once. Its question order and submitted answers persist across refreshes. Category completion requires finishing the words and category quiz; the score is recorded separately.
 
-To prepare the manifest from the folder supplied with this project without moving the dataset:
+The sidebar **Settings** popup selects Decision Tree or Extra Trees. Decision Tree is the default. Developer mode shows plain-language descriptions of the actual Decision Tree path for the latest applicable camera attempt. Extra Trees uses an explicitly labeled separate baseline-tree explanation. Explanations remain hidden during an unfinished assessment to avoid revealing answers.
 
-```powershell
-.venv\Scripts\python.exe scripts/prepare_dataset.py --dataset "C:\Users\Hannah Dimaculangan\OneDrive\Documents\Foregin_Sign_Language\dataset"
-```
+## Camera and local data
 
-## Pipeline outputs
+Camera practice captures a four-second attempt after a countdown. The preview is live; recognition runs after capture. Microphone access is not requested. If an embedded browser blocks the camera, use Edge or Chrome with the local address shown by Senyas.
 
-| Output | Purpose |
-|---|---|
-| `data/processed/manifest.csv` | Validated video metadata and leakage-safe split assignment |
-| `data/processed/features.npz` | Compressed fixed-length feature matrix |
-| `data/processed/feature_index.csv` | Per-video extraction status, hand detection rate, and timing |
-| `artifacts/hybrid_recognizer.joblib` | Extra Trees recognizer, Decision Tree explainer, feature names, labels, and validation-selected uncertainty threshold |
-| `artifacts/evaluation.json` | Validation/test metrics, robustness groups, latency, and trace checks |
-| `artifacts/test_predictions.csv` | Auditable clip-level test predictions |
+Progress is saved in `data/progress.json` inside the app folder. Back up this file before moving to a newer release, then place it in the new release's `data` folder to keep your history. Setup and release archives contain no personal progress. Recordings are processed in memory; prediction metadata and measured features for the latest explanation are saved locally without video files.
 
-Generated data and model files are ignored by Git.
+The installed launcher serves only on `127.0.0.1`, normally using port 8765. The local service may stay running after the browser tab closes, allowing a shortcut to reopen it. Restarting Windows stops that service. Startup diagnostics are in `.runtime/server.log`.
 
-## What the features mean
+## Run from source
 
-For each sampled frame, the extractor records:
-
-- 21 three-dimensional landmarks for each hand;
-- wrist position in the image and relative to the shoulder midpoint;
-- palm scale for size normalization;
-- five finger-bend angles and fingertip-extension distances per hand;
-- shoulder width, hand presence, distance between hands, and vertical hand offset.
-
-Coordinates describing hand shape are centered at the wrist and divided by palm size. Position features are divided by shoulder width. Each frame descriptor is converted to a fixed vector with mean, standard deviation, minimum, maximum, range, start, end, change, mean movement, and maximum movement. Extra Trees provides the primary recognition result, while the retained Decision Tree provides an exact learner-facing rule trace that is explicitly labeled as a baseline explanation.
-
-## Evaluation design
-
-- **Recognition:** accuracy, macro precision, macro recall, macro F1, per-class report, and confusion matrix.
-- **Generalization:** the held-out test split contains signer/session groups not used to fit or tune the tree.
-- **Robustness:** metrics can be grouped by signer/session and, when tagged, lighting, background, distance, and signing speed.
-- **Explainability:** up to 50 Decision Tree baseline traces are replayed programmatically to confirm every displayed comparison agrees with the branch taken; agreement between baseline and Extra Trees predictions is reported separately.
-- **Efficiency:** feature-extraction time and mean/p95/max classifier latency.
-- **Usability functions:** lesson playback, bilingual answers, retries, uncertain results, progress tracking, and optional explanations.
-
-Condition-specific testing needs human-reviewed tags. Copy `config/conditions_template.csv`, add one row per clip, and pass it to `prepare_dataset.py` with `--conditions`.
-
-## Testing
+The Windows installer also works from a source checkout. For development with an existing **Python 3.11 x64** installation:
 
 ```powershell
-.venv\Scripts\python.exe -m pytest
+py -3.11 -m venv .venv
+& .venv/Scripts/python.exe -m pip install -r requirements.txt
+& .venv/Scripts/python.exe scripts/run_app.py
 ```
 
-For a fast extraction smoke test before processing the full dataset:
+The launcher imports MediaPipe on the main thread before Streamlit starts, which avoids the Windows native-library startup issue. The VS Code run task uses this launcher. The application needs `artifacts/hybrid_recognizer.joblib`, `config/lessons.csv`, and `assets/lessons/`, all included in the release package.
+
+## Content and features
+
+`config/labels.csv` preserves the source class IDs and categories. `config/lessons.csv` adds display labels, Filipino equivalents, accepted answers, ordering, and bundled video paths. `assets/lessons/` contains one silent H.264 MP4 per class and a manifest of original relative clip names and output checksums.
+
+Recognition derives 163 frame features from hand landmarks and shoulder references, then summarizes each with 10 temporal statistics to form a 1,630-value vector. Decision Tree thresholds are inspectable; the upstream MediaPipe landmark detector is a learned model. The pipeline does not currently engineer facial-expression features or an explicit palm-facing direction label. Dataset scores do not establish accuracy for every webcam environment, and vocabulary translations may require instructor review.
+
+## Verification and research
 
 ```powershell
-.venv\Scripts\python.exe scripts/extract_features.py --limit 5
+& .venv/Scripts/python.exe -c "import mediapipe; import pytest; raise SystemExit(pytest.main(['-q']))"
+& .venv/Scripts/python.exe scripts/build_release.py
 ```
 
-## Responsible use and review
+The release builder writes a clean ZIP and `SHA256SUMS.txt` under `dist/`; installed libraries, raw datasets, caches, and learner history are excluded. Dataset preparation, extraction, training, and evaluation remain separate research scripts. Running the learning app requires none of those stages.
 
-The software is a research prototype and learning aid, not an authoritative interpreter. FSL is a natural language with regional and community variation. Before a formal study or deployment:
-
-- have the selected vocabulary, Filipino meanings, and demonstrations reviewed by qualified FSL signers or educators;
-- obtain consent for any newly recorded participants;
-- document signer demographics and recording conditions without exposing identities;
-- report the filename-derived grouping assumption clearly;
-- do not treat a low-confidence or incorrect model result as a judgment of a learner's signing ability; and
-- test accessibility with Deaf and hard-of-hearing users.
-
-See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for the report-ready methodology and [docs/DATASET_CARD.md](docs/DATASET_CARD.md) for the current data audit.
-=======
-# Senyas
->>>>>>> 9e56284431d8c9fb8e6f11a45163d172621c0adf
+See [camera controls](docs/LIVE_CAMERA.md), [explanation audit](docs/EXPLANATION_AUDIT.md), [validation checks](docs/LEARNING_APP_VALIDATION.md), and [release notes](docs/RELEASE_NOTES_1.0.0.md). Third-party components retain their own notices, documented in [third-party notices](THIRD_PARTY_NOTICES.md).

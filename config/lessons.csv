@@ -1,18 +1,106 @@
-id,label,category,filipino,synonyms,beginner_order
-0,GOOD MORNING,GREETING,magandang umaga,good morning|magandang umaga,1
-1,GOOD AFTERNOON,GREETING,magandang hapon,good afternoon|magandang hapon,2
-2,GOOD EVENING,GREETING,magandang gabi,good evening|magandang gabi,3
-3,HELLO,GREETING,kumusta,hello|hi|kumusta|kamusta,4
-4,HOW ARE YOU,GREETING,kumusta ka,how are you|kumusta ka|kamusta ka,5
-5,IM FINE,GREETING,mabuti ako,i am fine|im fine|i'm fine|mabuti ako|ayos lang ako,6
-6,NICE TO MEET YOU,GREETING,ikinagagalak kitang makilala,nice to meet you|ikinagagalak kitang makilala|masaya akong makilala ka,7
-7,THANK YOU,GREETING,salamat,thank you|thanks|salamat,8
-8,YOURE WELCOME,GREETING,walang anuman,youre welcome|you're welcome|you are welcome|walang anuman,9
-9,SEE YOU TOMORROW,GREETING,kita tayo bukas,see you tomorrow|kita tayo bukas|magkita tayo bukas,10
-10,UNDERSTAND,SURVIVAL,naiintindihan,understand|naiintindihan|naintindihan,11
-11,DON’T UNDERSTAND,SURVIVAL,hindi naiintindihan,dont understand|don't understand|do not understand|hindi naiintindihan,12
-14,NO,SURVIVAL,hindi,no|hindi,13
-15,YES,SURVIVAL,oo,yes|oo|opo,14
-17,CORRECT,SURVIVAL,tama,correct|right|tama,15
-16,WRONG,SURVIVAL,mali,wrong|incorrect|mali,16
-
+id,label,category,filipino,synonyms,beginner_order,display_label,video
+0,GOOD MORNING,GREETING,magandang umaga,GOOD MORNING|magandang umaga,1,GOOD MORNING,assets/lessons/000.mp4
+1,GOOD AFTERNOON,GREETING,magandang hapon,GOOD AFTERNOON|magandang hapon,2,GOOD AFTERNOON,assets/lessons/001.mp4
+2,GOOD EVENING,GREETING,magandang gabi,GOOD EVENING|magandang gabi,3,GOOD EVENING,assets/lessons/002.mp4
+3,HELLO,GREETING,kumusta,HELLO|kumusta|hi|kamusta,4,HELLO,assets/lessons/003.mp4
+4,HOW ARE YOU,GREETING,kumusta ka,HOW ARE YOU|kumusta ka|kamusta ka,5,HOW ARE YOU,assets/lessons/004.mp4
+5,IM FINE,GREETING,mabuti ako,I'M FINE|mabuti ako|i am fine|i'm fine|ayos lang ako,6,I'M FINE,assets/lessons/005.mp4
+6,NICE TO MEET YOU,GREETING,ikinagagalak kitang makilala,NICE TO MEET YOU|ikinagagalak kitang makilala|masaya akong makilala ka,7,NICE TO MEET YOU,assets/lessons/006.mp4
+7,THANK YOU,GREETING,salamat,THANK YOU|salamat|thanks,8,THANK YOU,assets/lessons/007.mp4
+8,YOURE WELCOME,GREETING,walang anuman,YOU'RE WELCOME|walang anuman|you're welcome|you are welcome,9,YOU'RE WELCOME,assets/lessons/008.mp4
+9,SEE YOU TOMORROW,GREETING,kita tayo bukas,SEE YOU TOMORROW|kita tayo bukas|magkita tayo bukas,10,SEE YOU TOMORROW,assets/lessons/009.mp4
+10,UNDERSTAND,SURVIVAL,naiintindihan,UNDERSTAND|naiintindihan|naintindihan,11,UNDERSTAND,assets/lessons/010.mp4
+11,DON’T UNDERSTAND,SURVIVAL,hindi naiintindihan,DON’T UNDERSTAND|hindi naiintindihan|dont understand|do not understand,12,DON’T UNDERSTAND,assets/lessons/011.mp4
+12,KNOW,SURVIVAL,alam,KNOW|alam,13,KNOW,assets/lessons/012.mp4
+13,DON’T KNOW,SURVIVAL,hindi alam,DON’T KNOW|hindi alam|dont know|do not know,14,DON’T KNOW,assets/lessons/013.mp4
+14,NO,SURVIVAL,hindi,NO|hindi,15,NO,assets/lessons/014.mp4
+15,YES,SURVIVAL,oo,YES|oo|opo,16,YES,assets/lessons/015.mp4
+16,WRONG,SURVIVAL,mali,WRONG|mali|incorrect,17,WRONG,assets/lessons/016.mp4
+17,CORRECT,SURVIVAL,tama,CORRECT|tama|right,18,CORRECT,assets/lessons/017.mp4
+18,SLOW,SURVIVAL,mabagal,SLOW|mabagal|dahan dahan,19,SLOW,assets/lessons/018.mp4
+19,FAST,SURVIVAL,mabilis,FAST|mabilis,20,FAST,assets/lessons/019.mp4
+20,ONE,NUMBER,isa,ONE|isa|1,21,ONE,assets/lessons/020.mp4
+21,TWO,NUMBER,dalawa,TWO|dalawa|2,22,TWO,assets/lessons/021.mp4
+22,THREE,NUMBER,tatlo,THREE|tatlo|3,23,THREE,assets/lessons/022.mp4
+23,FOUR,NUMBER,apat,FOUR|apat|4,24,FOUR,assets/lessons/023.mp4
+24,FIVE,NUMBER,lima,FIVE|lima|5,25,FIVE,assets/lessons/024.mp4
+25,SIX,NUMBER,anim,SIX|anim|6,26,SIX,assets/lessons/025.mp4
+26,SEVEN,NUMBER,pito,SEVEN|pito|7,27,SEVEN,assets/lessons/026.mp4
+27,EIGHT,NUMBER,walo,EIGHT|walo|8,28,EIGHT,assets/lessons/027.mp4
+28,NINE,NUMBER,siyam,NINE|siyam|9,29,NINE,assets/lessons/028.mp4
+29,TEN,NUMBER,sampu,TEN|sampu|10,30,TEN,assets/lessons/029.mp4
+30,JANUARY,CALENDAR,enero,JANUARY|enero,31,JANUARY,assets/lessons/030.mp4
+31,FEBRUARY,CALENDAR,pebrero,FEBRUARY|pebrero,32,FEBRUARY,assets/lessons/031.mp4
+32,MARCH,CALENDAR,marso,MARCH|marso,33,MARCH,assets/lessons/032.mp4
+33,APRIL,CALENDAR,abril,APRIL|abril,34,APRIL,assets/lessons/033.mp4
+34,MAY,CALENDAR,mayo,MAY|mayo,35,MAY,assets/lessons/034.mp4
+35,JUNE,CALENDAR,hunyo,JUNE|hunyo,36,JUNE,assets/lessons/035.mp4
+36,JULY,CALENDAR,hulyo,JULY|hulyo,37,JULY,assets/lessons/036.mp4
+37,AUGUST,CALENDAR,agosto,AUGUST|agosto,38,AUGUST,assets/lessons/037.mp4
+38,SEPTEMBER,CALENDAR,setyembre,SEPTEMBER|setyembre|septiyembre,39,SEPTEMBER,assets/lessons/038.mp4
+39,OCTOBER,CALENDAR,oktubre,OCTOBER|oktubre,40,OCTOBER,assets/lessons/039.mp4
+40,NOVEMBER,CALENDAR,nobyembre,NOVEMBER|nobyembre,41,NOVEMBER,assets/lessons/040.mp4
+41,DECEMBER,CALENDAR,disyembre,DECEMBER|disyembre,42,DECEMBER,assets/lessons/041.mp4
+42,MONDAY,DAYS,lunes,MONDAY|lunes,43,MONDAY,assets/lessons/042.mp4
+43,TUESDAY,DAYS,martes,TUESDAY|martes,44,TUESDAY,assets/lessons/043.mp4
+44,WEDNESDAY,DAYS,miyerkules,WEDNESDAY|miyerkules,45,WEDNESDAY,assets/lessons/044.mp4
+45,THURSDAY,DAYS,huwebes,THURSDAY|huwebes,46,THURSDAY,assets/lessons/045.mp4
+46,FRIDAY,DAYS,biyernes,FRIDAY|biyernes,47,FRIDAY,assets/lessons/046.mp4
+47,SATURDAY,DAYS,sabado,SATURDAY|sabado,48,SATURDAY,assets/lessons/047.mp4
+48,SUNDAY,DAYS,linggo,SUNDAY|linggo,49,SUNDAY,assets/lessons/048.mp4
+49,TODAY,DAYS,ngayon,TODAY|ngayon,50,TODAY,assets/lessons/049.mp4
+50,TOMORROW,DAYS,bukas,TOMORROW|bukas,51,TOMORROW,assets/lessons/050.mp4
+51,YESTERDAY,DAYS,kahapon,YESTERDAY|kahapon,52,YESTERDAY,assets/lessons/051.mp4
+52,FATHER,FAMILY,ama,FATHER|ama|tatay,53,FATHER,assets/lessons/052.mp4
+53,MOTHER,FAMILY,ina,MOTHER|ina|nanay,54,MOTHER,assets/lessons/053.mp4
+54,SON,FAMILY,anak na lalaki,SON|anak na lalaki,55,SON,assets/lessons/054.mp4
+55,DAUGHTER,FAMILY,anak na babae,DAUGHTER|anak na babae,56,DAUGHTER,assets/lessons/055.mp4
+56,GRANDFATHER,FAMILY,lolo,GRANDFATHER|lolo,57,GRANDFATHER,assets/lessons/056.mp4
+57,GRANDMOTHER,FAMILY,lola,GRANDMOTHER|lola,58,GRANDMOTHER,assets/lessons/057.mp4
+58,UNCLE,FAMILY,tiyuhin,UNCLE|tiyuhin|tito,59,UNCLE,assets/lessons/058.mp4
+59,AUNTIE,FAMILY,tiyahin,AUNTIE|tiyahin|tita|aunt,60,AUNTIE,assets/lessons/059.mp4
+60,COUSIN,FAMILY,pinsan,COUSIN|pinsan,61,COUSIN,assets/lessons/060.mp4
+61,PARENTS,FAMILY,mga magulang,PARENTS|mga magulang,62,PARENTS,assets/lessons/061.mp4
+62,BOY,RELATIONSHIPS,batang lalaki,BOY|batang lalaki,63,BOY,assets/lessons/062.mp4
+63,GIRL,RELATIONSHIPS,batang babae,GIRL|batang babae,64,GIRL,assets/lessons/063.mp4
+64,MAN,RELATIONSHIPS,lalaki,MAN|lalaki,65,MAN,assets/lessons/064.mp4
+65,WOMAN,RELATIONSHIPS,babae,WOMAN|babae,66,WOMAN,assets/lessons/065.mp4
+66,DEAF,RELATIONSHIPS,bingi,DEAF|bingi,67,DEAF,assets/lessons/066.mp4
+67,HARD OF HEARING,RELATIONSHIPS,mahina ang pandinig,HARD OF HEARING|mahina ang pandinig|hirap makarinig,68,HARD OF HEARING,assets/lessons/067.mp4
+68,WEELCHAIR PERSON,RELATIONSHIPS,gumagamit ng wheelchair,WHEELCHAIR USER|gumagamit ng wheelchair|wheelchair user|wheelchair person,69,WHEELCHAIR USER,assets/lessons/068.mp4
+69,BLIND,RELATIONSHIPS,bulag,BLIND|bulag,70,BLIND,assets/lessons/069.mp4
+70,DEAF BLIND,RELATIONSHIPS,bingi at bulag,DEAF BLIND|bingi at bulag|deafblind,71,DEAF BLIND,assets/lessons/070.mp4
+71,MARRIED,RELATIONSHIPS,may asawa,MARRIED|may asawa|kasal,72,MARRIED,assets/lessons/071.mp4
+72,BLUE,COLOR,asul,BLUE|asul|bughaw,73,BLUE,assets/lessons/072.mp4
+73,GREEN,COLOR,berde,GREEN|berde|luntian,74,GREEN,assets/lessons/073.mp4
+74,RED,COLOR,pula,RED|pula,75,RED,assets/lessons/074.mp4
+75,BROWN,COLOR,kayumanggi,BROWN|kayumanggi|kulay kape,76,BROWN,assets/lessons/075.mp4
+76,BLACK,COLOR,itim,BLACK|itim,77,BLACK,assets/lessons/076.mp4
+77,WHITE,COLOR,puti,WHITE|puti,78,WHITE,assets/lessons/077.mp4
+78,YELLOW,COLOR,dilaw,YELLOW|dilaw,79,YELLOW,assets/lessons/078.mp4
+79,ORANGE,COLOR,kahel,ORANGE|kahel|kulay dalandan,80,ORANGE,assets/lessons/079.mp4
+80,GRAY,COLOR,abo,GRAY|abo|abuhin|grey,81,GRAY,assets/lessons/080.mp4
+81,PINK,COLOR,rosas,PINK|rosas|kulay rosas,82,PINK,assets/lessons/081.mp4
+82,VIOLET,COLOR,lila,VIOLET|lila|ube|purple,83,VIOLET,assets/lessons/082.mp4
+83,LIGHT,COLOR,mapusyaw,LIGHT|mapusyaw|light color|light colour,84,LIGHT,assets/lessons/083.mp4
+84,DARK,COLOR,madilim,DARK|madilim|madilim na kulay|dark color|dark colour,85,DARK,assets/lessons/084.mp4
+85,BREAD,FOOD,tinapay,BREAD|tinapay,86,BREAD,assets/lessons/085.mp4
+86,EGG,FOOD,itlog,EGG|itlog,87,EGG,assets/lessons/086.mp4
+87,FISH,FOOD,isda,FISH|isda,88,FISH,assets/lessons/087.mp4
+88,MEAT,FOOD,karne,MEAT|karne,89,MEAT,assets/lessons/088.mp4
+89,CHICKEN,FOOD,manok,CHICKEN|manok,90,CHICKEN,assets/lessons/089.mp4
+90,SPAGHETTI,FOOD,ispageti,SPAGHETTI|ispageti,91,SPAGHETTI,assets/lessons/090.mp4
+91,RICE,FOOD,kanin,RICE|kanin|bigas,92,RICE,assets/lessons/091.mp4
+92,LONGANISA,FOOD,longganisa,LONGANISA|longganisa,93,LONGANISA,assets/lessons/092.mp4
+93,SHRIMP,FOOD,hipon,SHRIMP|hipon,94,SHRIMP,assets/lessons/093.mp4
+94,CRAB,FOOD,alimango,CRAB|alimango,95,CRAB,assets/lessons/094.mp4
+95,HOT,DRINK,mainit,HOT|mainit,96,HOT,assets/lessons/095.mp4
+96,COLD,DRINK,malamig,COLD|malamig,97,COLD,assets/lessons/096.mp4
+97,JUICE,DRINK,katas,JUICE|katas|dyus,98,JUICE,assets/lessons/097.mp4
+98,MILK,DRINK,gatas,MILK|gatas,99,MILK,assets/lessons/098.mp4
+99,COFFEE,DRINK,kape,COFFEE|kape,100,COFFEE,assets/lessons/099.mp4
+100,TEA,DRINK,tsaa,TEA|tsaa,101,TEA,assets/lessons/100.mp4
+101,BEER,DRINK,serbesa,BEER|serbesa,102,BEER,assets/lessons/101.mp4
+102,WINE,DRINK,alak,WINE|alak,103,WINE,assets/lessons/102.mp4
+103,SUGAR,DRINK,asukal,SUGAR|asukal,104,SUGAR,assets/lessons/103.mp4
+104,NO SUGAR,DRINK,walang asukal,NO SUGAR|walang asukal|no added sugar,105,NO SUGAR,assets/lessons/104.mp4

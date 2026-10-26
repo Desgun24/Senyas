@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}body{margin:0;padding:2px;font:15px Arial,sans-serif;color:#14291f;background:#fff;-webkit-user-select:none;user-select:none}
+video{display:block;width:100%;max-height:440px;aspect-ratio:16/9;object-fit:contain;background:#14291f;border-radius:18px}
+button{margin-top:10px;padding:9px 18px;background:#fff;color:#14532d;border:1px solid #8cab96;border-radius:24px;font:600 15px Arial;cursor:pointer}
+button:hover{background:#e9f3ed}button:focus-visible{outline:3px solid #166534;outline-offset:2px}
+</style></head><body>
+<video id="video" aria-label="Silent sign demonstration" controls autoplay muted playsinline></video>
+<button id="replay" type="button">↻ Replay video</button>
+<script>
+const video=document.getElementById('video');
+const origin=new URL(document.referrer||location.href).origin;
+let context=null;
+function post(type,data={}){parent.postMessage({isStreamlitMessage:true,type,...data},origin)}
+function height(){post('streamlit:setFrameHeight',{height:document.body.scrollHeight+8})}
+window.addEventListener('message',event=>{
+ if(event.source!==parent||event.origin!==origin||event.data?.type!=='streamlit:render')return;
+ const args=event.data.args;
+ if(context!==args.context){context=args.context;video.src=args.source;video.muted=true;video.play().catch(()=>{});}
+ height();
+});
+document.getElementById('replay').onclick=()=>{video.currentTime=0;video.play().catch(()=>{});};
+new ResizeObserver(height).observe(document.body);
+post('streamlit:componentReady',{apiVersion:1});height();
+</script></body></html>

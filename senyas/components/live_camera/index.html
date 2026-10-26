@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senyas live camera</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 2px; font: 15px/1.4 Arial, sans-serif; color: #14291f; background: #fff; -webkit-user-select: none; user-select: none; }
+    .preview { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px solid #777; border-radius: 10px; overflow: hidden; }
+    video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    video.mirrored { transform: scaleX(-1); }
+    #placeholder, #countdown { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+    #placeholder { background: #fff; }
+    #countdown span { font-size: 48px; font-weight: bold; background: #fff; color: #111; padding: 0 20px; border-radius: 8px; }
+    [hidden] { display: none !important; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    button, select { font: inherit; color: #14532d; background: #fff; border: 1px solid #8cab96; border-radius: 24px; padding: 8px 12px; }
+    button { cursor: pointer; }
+    button:disabled { opacity: .45; cursor: default; }
+    button:focus-visible, select:focus-visible { outline: 3px solid #166534; outline-offset: 2px; }
+    #record { font-weight: bold; color: #fff; background: #166534; }
+    .options { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 10px 0; }
+    select { max-width: 100%; }
+    #status { margin: 8px 0; min-height: 22px; font-weight: bold; }
+    .hint { margin: 6px 0; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="preview">
+    <video id="preview" autoplay playsinline muted class="mirrored" aria-label="Live camera preview"></video>
+    <div id="placeholder">Camera is off</div>
+    <div id="countdown" hidden><span></span></div>
+  </div>
+  <div class="controls">
+    <button id="start" type="button">Start camera</button>
+    <button id="record" type="button" disabled>Record 4-second sign</button>
+    <button id="stop" type="button" disabled>Stop camera</button>
+  </div>
+  <div class="options">
+    <label id="device-label" hidden>Camera <select id="device" aria-label="Camera device"></select></label>
+    <label><input id="mirror" type="checkbox" checked> Mirror preview only</label>
+  </div>
+  <p id="status" role="status" aria-live="polite">Start the camera, then allow camera access in your browser.</p>
+  <p class="hint">Keep your hands and shoulders inside the preview. Wait for the countdown, then perform one sign. Your microphone stays off.</p>
+  <script src="camera.js"></script>
+</body>
+</html>

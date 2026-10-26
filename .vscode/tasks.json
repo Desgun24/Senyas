@@ -28,7 +28,7 @@
     {
       "label": "Senyas: run app",
       "type": "shell",
-      "command": ".venv\\Scripts\\streamlit.exe run app.py",
+      "command": ".venv\\Scripts\\python.exe scripts/run_app.py",
       "problemMatcher": [],
       "isBackground": true
     }

@@ -191,6 +191,25 @@ def load_artifact(path: str | Path) -> dict[str, Any]:
     return joblib.load(path)
 
 
+def select_recognizer(artifact: dict[str, Any], name: str) -> dict[str, Any]:
+    """Select a trained predictor without modifying the saved bundle."""
+    selected = dict(artifact)
+    if name == "Extra Trees":
+        return selected
+    if name != "Decision Tree":
+        raise ValueError(f"Unknown recognizer: {name}")
+    tree = artifact.get("explainer_model")
+    if tree is None and isinstance(artifact["model"], DecisionTreeClassifier):
+        tree = artifact["model"]
+    if not isinstance(tree, DecisionTreeClassifier):
+        raise ValueError("The model bundle does not contain a trained Decision Tree")
+    selected["model"] = tree
+    selected["explainer_model"] = tree
+    # The stored ensemble cutoff was not validated for this separate tree.
+    selected["confidence_threshold"] = artifact.get("decision_tree_confidence_threshold")
+    return selected
+
+
 def predict_vector(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, Any]:
     model = artifact["model"]
     sample = np.asarray(vector, dtype=np.float32).reshape(1, -1)
@@ -200,14 +219,15 @@ def predict_vector(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, An
     best_index = int(np.argmax(probabilities))
     class_id = int(model.classes_[best_index])
     confidence = float(probabilities[best_index])
-    threshold = float(artifact.get("confidence_threshold", 0.60))
+    configured_threshold = artifact.get("confidence_threshold", 0.60)
+    threshold = float(configured_threshold) if configured_threshold is not None else None
     label = artifact["label_lookup"].get(class_id, {"label": str(class_id), "category": ""})
     return {
         "class_id": class_id,
         "label": label["label"],
         "category": label.get("category", ""),
         "confidence": confidence,
-        "uncertain": confidence < threshold,
+        "uncertain": threshold is not None and confidence < threshold,
         "threshold": threshold,
         "prediction_ms": latency_ms,
         "probabilities": {
@@ -219,7 +239,9 @@ def predict_vector(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, An
 
 def decision_trace(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, Any]:
     primary_model = artifact["model"]
-    model: DecisionTreeClassifier = artifact.get("explainer_model", primary_model)
+    model: DecisionTreeClassifier = (
+        primary_model if hasattr(primary_model, "tree_") else artifact.get("explainer_model", primary_model)
+    )
     if not hasattr(model, "tree_"):
         raise ValueError("This artifact does not contain a Decision Tree explainer")
     feature_names: list[str] = artifact["feature_names"]
@@ -228,13 +250,14 @@ def decision_trace(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, An
     leaf_id = int(model.apply(sample)[0])
     nodes = node_indicator.indices[node_indicator.indptr[0] : node_indicator.indptr[1]]
     rules: list[dict[str, Any]] = []
-    for node_id in nodes:
+    for path_index, node_id in enumerate(nodes):
         if node_id == leaf_id:
             continue
         feature_index = int(model.tree_.feature[node_id])
         threshold = float(model.tree_.threshold[node_id])
         value = float(sample[0, feature_index])
         went_left = value <= threshold
+        expected_child = model.tree_.children_left[node_id] if went_left else model.tree_.children_right[node_id]
         rules.append(
             {
                 "node": int(node_id),
@@ -242,7 +265,7 @@ def decision_trace(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, An
                 "value": value,
                 "operator": "<=" if went_left else ">",
                 "threshold": threshold,
-                "condition_holds": bool(value <= threshold if went_left else value > threshold),
+                "condition_holds": bool(nodes[path_index + 1] == expected_child),
             }
         )
     prediction = predict_vector(artifact, vector)
@@ -260,7 +283,7 @@ def decision_trace(artifact: dict[str, Any], vector: np.ndarray) -> dict[str, An
             "category": explainer_label.get("category", ""),
         },
         "agrees_with_primary": explainer_class_id == prediction["class_id"],
-        "trace_source": "decision_tree_baseline",
+        "trace_source": "decision_tree_primary" if model is primary_model else "decision_tree_baseline",
     }
 
 

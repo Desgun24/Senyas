@@ -18,18 +18,37 @@ def normalize_answer(value: str) -> str:
 
 def load_lessons(path: str | Path | None = None) -> pd.DataFrame:
     lesson_path = Path(path) if path else PROJECT_ROOT / "config" / "lessons.csv"
-    lessons = pd.read_csv(lesson_path)
+    lessons = pd.read_csv(lesson_path).fillna("")
+    if "display_label" not in lessons:
+        lessons["display_label"] = lessons["label"]
     lessons["accepted_answers"] = lessons.apply(
         lambda row: sorted(
             {
                 normalize_answer(answer)
-                for answer in [row["label"], row["filipino"], *str(row["synonyms"]).split("|")]
+                for answer in [row["label"], row["display_label"], row["filipino"], *str(row["synonyms"]).split("|")]
                 if normalize_answer(answer)
             }
         ),
         axis=1,
     )
     return lessons.sort_values("beginner_order").reset_index(drop=True)
+
+
+def bundled_video(lesson: pd.Series | dict) -> Path:
+    """Resolve project-owned media without consulting the source dataset."""
+    root = PROJECT_ROOT.resolve()
+    path = (root / str(lesson["video"])).resolve()
+    if not path.is_relative_to(root / "assets" / "lessons"):
+        raise ValueError("Lesson video must belong to the bundled lesson assets")
+    return path
+
+
+def categories(lessons: pd.DataFrame) -> list[str]:
+    return lessons["category"].drop_duplicates().tolist()
+
+
+def category_title(category: str) -> str:
+    return {"GREETING": "Greetings", "NUMBER": "Numbers", "COLOR": "Colors", "DRINK": "Drinks"}.get(category, category.title())
 
 
 def check_meaning(answer: str, lesson: pd.Series | dict[str, object]) -> bool:
