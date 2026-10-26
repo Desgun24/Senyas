@@ -7,9 +7,14 @@ __pycache__/
 
 # Generated data and model artifacts
 data/processed/
-artifacts/*.joblib
-artifacts/*.json
-artifacts/*.csv
+# Ignore other generated artifacts
+artifacts/*
+
+# Include the trained system required to run recognition
+!artifacts/hybrid_recognizer.joblib
+!artifacts/evaluation.json
+!artifacts/model_summary.json
+!artifacts/test_predictions.csv
 dataset/
 
 # Temporary PDF inspection files
