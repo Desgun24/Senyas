@@ -10,13 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     version = (ROOT / 'VERSION').read_text().strip()
     folder = f'Senyas-{version}-Windows-x64'
-    files = [ROOT / name for name in ['app.py', 'README.md', 'VERSION', 'requirements.txt',
+    files = [ROOT / name for name in ['app.py', 'feature_lab.py', 'README.md', 'VERSION', 'requirements.txt',
              'requirements-windows.lock', 'Install Senyas.cmd', 'Start Senyas.cmd', 'THIRD_PARTY_NOTICES.md']]
     for name in ['senyas', 'config', 'assets', 'scripts', 'docs', '.streamlit']:
         files.extend(path for path in (ROOT / name).rglob('*') if path.is_file()
                      and '__pycache__' not in path.parts and path.name != 'secrets.toml')
-    files.append(ROOT / 'artifacts/hybrid_recognizer.joblib')
-    files.append(ROOT / 'artifacts/model_summary.json')
+    files.extend(path for path in (ROOT / 'artifacts/frozen').rglob('*') if path.is_file())
     output = ROOT / 'dist'
     output.mkdir(exist_ok=True)
     archive = output / f'{folder}.zip'

@@ -6,9 +6,9 @@ Senyas is a Filipino Sign Language learning app with **105 words across 10 categ
 
 ## Install on Windows
 
-[Download Senyas 1.0.0 for Windows x64](https://github.com/Desgun24/Senyas/releases/download/v1.0.0/Senyas-1.0.0-Windows-x64.zip) · [Release notes and checksums](https://github.com/Desgun24/Senyas/releases/tag/v1.0.0)
+[Download Senyas 1.1.0 for Windows x64](https://github.com/Desgun24/Senyas/releases/download/v1.1.0/Senyas-1.1.0-Windows-x64.zip) · [Release notes and checksums](https://github.com/Desgun24/Senyas/releases/tag/v1.1.0)
 
-1. Get `Senyas-1.0.0-Windows-x64.zip` and extract it into a permanent writable folder, such as `Documents/Senyas`.
+1. Get `Senyas-1.1.0-Windows-x64.zip` and extract it into a permanent writable folder, such as `Documents/Senyas`.
 2. Double-click **Install Senyas.cmd** inside the extracted folder.
 3. Wait for setup to download Python and the libraries, verify the app, and open it in your browser.
 4. Allow camera access when starting a signing activity.
@@ -29,7 +29,7 @@ The installer targets **Windows x64** and needs internet for the first setup. Ed
 
 An assessment uses every selected word once. Its question order and submitted answers persist across refreshes. Category completion requires finishing the words and category quiz; the score is recorded separately.
 
-The sidebar **Settings** popup selects Decision Tree or Extra Trees. Decision Tree is the default. Developer mode shows plain-language descriptions of the actual Decision Tree path for the latest applicable camera attempt. Extra Trees uses an explicitly labeled separate baseline-tree explanation. Explanations remain hidden during an unfinished assessment to avoid revealing answers.
+The sidebar **Settings** popup selects Decision Tree or Extra Trees. Decision Tree is the interpretable primary model and the default. Developer mode describes its actual decision path for the latest applicable camera attempt, including whether a branch used an unavailable measurement's training-set replacement. Extra Trees is the data-driven ensemble baseline and has no single decision path displayed. Explanations remain hidden during an unfinished assessment to avoid revealing answers.
 
 ## Camera and local data
 
@@ -49,15 +49,27 @@ py -3.11 -m venv .venv
 & .venv/Scripts/python.exe scripts/run_app.py
 ```
 
-The launcher imports MediaPipe on the main thread before Streamlit starts, which avoids the Windows native-library startup issue. The VS Code run task uses this launcher. The application needs `artifacts/hybrid_recognizer.joblib`, `config/lessons.csv`, and `assets/lessons/`, all included in the release package.
+The launcher imports MediaPipe on the main thread before Streamlit starts, which avoids the Windows native-library startup issue. The VS Code run task uses this launcher. The application needs `artifacts/frozen/`, `config/lessons.csv`, and `assets/lessons/`, all included in the release package.
 
 ## Content and features
 
 `config/labels.csv` preserves the source class IDs and categories. `config/lessons.csv` adds display labels, Filipino equivalents, accepted answers, ordering, and bundled video paths. `assets/lessons/` contains one silent H.264 MP4 per class and a manifest of original relative clip names and output checksums.
 
-Recognition derives 163 frame features from hand landmarks and shoulder references, then summarizes each with 10 temporal statistics to form a 1,630-value vector. Decision Tree thresholds are inspectable; the upstream MediaPipe landmark detector is a learned model. The pipeline does not currently engineer facial-expression features or an explicit palm-facing direction label. Dataset scores do not establish accuracy for every webcam environment, and vocabulary translations may require instructor review.
+Recognition measures 278 geometric features and 50 motion features per frame. It excludes 14 experimental measurements, leaving 314 supported measurements. Five whole-sign summaries plus a median and availability summary in each of three phases produce 314 × 11 = 3,454 candidates. Training-only filtering removes 62 constant, missing, or rarely observed columns, leaving **3,392 model inputs**. Leading and trailing frames with no tracked hands are trimmed; internal gaps remain missing, and the saved training medians replace unavailable summaries.
+
+The frozen Decision Tree uses 135 distinct input columns and at most 10 branch decisions per prediction. Both models were fitted on 1,494 training clips, with no validation refit, and share the same engineered features. Validation accuracy was **84.69%** for Decision Tree and **98.13%** for Extra Trees on 320 accepted clips; one additional validation recording had no usable hands. On the fixed held-out test set, Decision Tree scored **262/315 (83.17%)**, and Extra Trees scored **311/315 (98.73%)**. Test macro F1 was **82.78%** and **98.69%**, respectively, with no rejected test clips. Portable predictions, confusion matrices, verification receipts, and model hashes are in `artifacts/frozen/`.
+
+Weights and preprocessing are unchanged after the held-out test. The runtime uses full-complexity MediaPipe tracking, a 480-pixel maximum image side, and timestamp-aware motion. Camera capture targets 30 FPS; actual capture and processing rates depend on hardware. Tree thresholds are inspectable; the upstream landmark detector is a learned model. Proximity is not proof of touch, estimated depth does not establish palm-facing direction, and facial expressions are not engineered. Dataset scores do not establish accuracy for every webcam environment, and vocabulary translations may require instructor review.
 
 ## Verification and research
+
+The separate camera-based feature lab can inspect ordered measurements and save labelled hand-shape clips:
+
+```powershell
+& .venv/Scripts/python.exe scripts/run_app.py --feature-lab --server.address 127.0.0.1 --server.port 8502 --server.headless true
+```
+
+The lab implements the feature schema and experimental DTW alignment engine; it is a measurement tool rather than the app's trained recognizer. The learning app uses the frozen three-phase models. See [semantic feature development](docs/SEMANTIC_FEATURE_DEVELOPMENT.md) for supported measurements, deferred labels, clip annotation, and measured frame rates.
 
 ```powershell
 & .venv/Scripts/python.exe -c "import mediapipe; import pytest; raise SystemExit(pytest.main(['-q']))"
@@ -66,4 +78,4 @@ Recognition derives 163 frame features from hand landmarks and shoulder referenc
 
 The release builder writes a clean ZIP and `SHA256SUMS.txt` under `dist/`; installed libraries, raw datasets, caches, and learner history are excluded. Dataset preparation, extraction, training, and evaluation remain separate research scripts. Running the learning app requires none of those stages.
 
-See [camera controls](docs/LIVE_CAMERA.md), [explanation audit](docs/EXPLANATION_AUDIT.md), [validation checks](docs/LEARNING_APP_VALIDATION.md), and [release notes](docs/RELEASE_NOTES_1.0.0.md). Third-party components retain their own notices, documented in [third-party notices](THIRD_PARTY_NOTICES.md).
+See [camera controls](docs/LIVE_CAMERA.md) and [current release notes](docs/RELEASE_NOTES_1.1.0.md). The [original explanation audit](docs/EXPLANATION_AUDIT.md) and [original validation checks](docs/LEARNING_APP_VALIDATION.md) document version 1.0.0. Third-party components retain their own notices, documented in [third-party notices](THIRD_PARTY_NOTICES.md).

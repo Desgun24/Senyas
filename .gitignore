@@ -8,6 +8,7 @@ dist/
 build/
 outputs/
 data/progress.json
+data/handshape_samples/
 *.log
 __pycache__/
 *.py[cod]
@@ -25,6 +26,8 @@ artifacts/*
 !artifacts/evaluation.json
 !artifacts/model_summary.json
 !artifacts/test_predictions.csv
+!artifacts/frozen/
+!artifacts/frozen/**
 dataset/
 
 # Temporary PDF inspection files

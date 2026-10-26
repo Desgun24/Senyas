@@ -37,7 +37,8 @@ Get-VerifiedDownload $config.pip.url $pipWheel $config.pip.sha256
 & $python -c 'import sys, zipfile; zipfile.ZipFile(sys.argv[1]).extractall(sys.argv[2])' $pipWheel (Join-Path $pythonDir 'Lib\site-packages')
 if ($LASTEXITCODE -ne 0) { throw 'Could not install the pinned package installer.' }
 Write-Host 'Installing pinned libraries. This can take several minutes...'
-& $python -m pip --isolated install --disable-pip-version-check --only-binary=:all: --require-hashes --no-warn-script-location --timeout 180 -r (Join-Path $taskRoot 'requirements-windows.lock')
+# Compile imported modules on demand instead of precompiling every library file.
+& $python -m pip --isolated install --disable-pip-version-check --only-binary=:all: --require-hashes --no-compile --no-warn-script-location --timeout 180 -r (Join-Path $taskRoot 'requirements-windows.lock')
 if ($LASTEXITCODE -ne 0) { throw 'Library installation failed. Check internet access, then run setup again.' }
 & $python -m pip check
 if ($LASTEXITCODE -ne 0) { throw 'Library compatibility check failed.' }

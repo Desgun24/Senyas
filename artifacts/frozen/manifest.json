@@ -1,0 +1,86 @@
+{
+  "pipeline_id": "frozen-three-phase-v1",
+  "frozen_at": "2026-10-26T20:42:29.122596+00:00",
+  "files": {
+    "decision_tree.joblib": "9268fb0b7762238ce34aabcd79313f5346a02aa409c46ac4e3cb74f5077b7cad",
+    "extra_trees.joblib": "27c106a802b5c75b5dd62c2806f56d4a855f9b60ca62b9cbdca789461b837ab7"
+  },
+  "extractor": {
+    "target_fps": 30.0,
+    "max_image_side": 480,
+    "model_complexity": 1
+  },
+  "training_samples": 1494,
+  "validation_samples_accepted": 320,
+  "test_samples": 315,
+  "raw_frame_measurements": 328,
+  "supported_frame_measurements": 314,
+  "summary_candidates": 3454,
+  "model_inputs": 3392,
+  "decision_tree_role": "interpretable primary model",
+  "extra_trees_role": "data-driven baseline",
+  "validation_accuracy": {
+    "decision_tree": 0.846875,
+    "extra_trees": 0.98125
+  },
+  "test_results": {
+    "status": "complete",
+    "frozen_at": "2026-10-26T20:42:29.122596+00:00",
+    "test_split": "supplied manifest test only",
+    "models": {
+      "decision_tree": {
+        "role": "interpretable primary model",
+        "test_attempted": 315,
+        "test_accepted": 315,
+        "test_rejected": 0,
+        "correct": 262,
+        "accepted_metrics": {
+          "accuracy": 0.8317460317460318,
+          "macro_precision": 0.8740816326530612,
+          "macro_recall": 0.8317460317460317,
+          "macro_f1": 0.8278231292517007
+        },
+        "all_attempted_metrics": {
+          "accuracy": 0.8317460317460318,
+          "macro_precision": 0.8740816326530612,
+          "macro_recall": 0.8317460317460317,
+          "macro_f1": 0.8278231292517007
+        }
+      },
+      "extra_trees": {
+        "role": "data-driven baseline",
+        "test_attempted": 315,
+        "test_accepted": 315,
+        "test_rejected": 0,
+        "correct": 311,
+        "accepted_metrics": {
+          "accuracy": 0.9873015873015873,
+          "macro_precision": 0.9904761904761905,
+          "macro_recall": 0.9873015873015872,
+          "macro_f1": 0.9869387755102041
+        },
+        "all_attempted_metrics": {
+          "accuracy": 0.9873015873015873,
+          "macro_precision": 0.9904761904761905,
+          "macro_recall": 0.9873015873015872,
+          "macro_f1": 0.9869387755102041
+        }
+      }
+    },
+    "model_weights_unchanged": true,
+    "preprocessing_unchanged": true,
+    "no_fitting_or_tuning": true
+  },
+  "runtime_source_sha256": {
+    "senyas/semantic_features.py": "5eda61bd8e94fbbf7af408da5e5d56f031aa1d119c6c55f98f2f2865ee889783",
+    "senyas/sequences.py": "b689435a961325660400264e0fd9d42227b1c6a9247109c29c9616d468ac54f8",
+    "senyas/semantic_tree.py": "c5015c189763fe7d9a314b0e010d95d7e4d488f5a230570a3785a6948548f2d3",
+    "senyas/model.py": "73ab325a3491315d8e3dca15f68ae42fd1ba98a17d2c392443457f9117b982b8"
+  },
+  "runtime_source_lf_sha256": {
+    "senyas/semantic_features.py": "5eda61bd8e94fbbf7af408da5e5d56f031aa1d119c6c55f98f2f2865ee889783",
+    "senyas/sequences.py": "b689435a961325660400264e0fd9d42227b1c6a9247109c29c9616d468ac54f8",
+    "senyas/semantic_tree.py": "c5015c189763fe7d9a314b0e010d95d7e4d488f5a230570a3785a6948548f2d3",
+    "senyas/model.py": "019fa1df46b34fce4274e2858b9eb9c087a5d4ffd8a961a74bbdfb37ca0bf603"
+  }
+}

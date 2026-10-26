@@ -1,0 +1,2298 @@
+[
+  {
+    "name": "pose.present",
+    "group": "tracking",
+    "unit": "flag",
+    "meaning": "Landmark sets available in this frame; not physical absence",
+    "experimental": false
+  },
+  {
+    "name": "face.present",
+    "group": "tracking",
+    "unit": "flag",
+    "meaning": "Landmark sets available in this frame; not physical absence",
+    "experimental": false
+  },
+  {
+    "name": "both_hands.present",
+    "group": "tracking",
+    "unit": "flag",
+    "meaning": "Landmark sets available in this frame; not physical absence",
+    "experimental": false
+  },
+  {
+    "name": "left.present",
+    "group": "tracking",
+    "unit": "flag",
+    "meaning": "Hand landmarks available",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.index.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.index.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.index.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.index.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.index.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.index.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "left.index.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.index.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.index.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.index.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.index.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.index.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.thumb_index_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.thumb_middle_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.thumb_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.thumb_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.index_middle_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.index_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.index_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.middle_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.middle_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.tips.ring_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "left.spread.index_middle",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "left.spread.middle_ring",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "left.spread.ring_pinky",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "left.hand_axis_x",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "left.hand_axis_y",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "left.hand_axis_z",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "left.palm_normal_winding_x",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "left.palm_normal_winding_y",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "left.palm_normal_winding_z",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "left.tilt_from_vertical",
+    "group": "orientation",
+    "unit": "degrees",
+    "meaning": "Undirected image-plane tilt: vertical zero, horizontal ninety",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.palm_relative_x",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.palm_relative_y",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.palm_relative_z",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "left.wrist.body_x",
+    "group": "location",
+    "unit": "shoulder_units",
+    "meaning": "Wrist relative to shoulder midpoint; x image-right, y image-up",
+    "experimental": false
+  },
+  {
+    "name": "left.wrist.body_y",
+    "group": "location",
+    "unit": "shoulder_units",
+    "meaning": "Wrist relative to shoulder midpoint; x image-right, y image-up",
+    "experimental": false
+  },
+  {
+    "name": "left.wrist.body_depth_proxy",
+    "group": "depth_proxy",
+    "unit": "shoulder_units",
+    "meaning": "Pose wrist depth relative to shoulders; NOT independent hand-landmark z",
+    "experimental": true
+  },
+  {
+    "name": "left.near.forehead.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.forehead.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.forehead.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.lips.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.lips.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.lips.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.nose.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.nose.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.nose.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chin.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chin.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chin.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_ear.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_ear.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_ear.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_ear.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_ear.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_ear.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_cheek.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_cheek.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_cheek.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_cheek.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_cheek.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_cheek.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chest.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chest.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.chest.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_shoulder.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_shoulder.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_shoulder.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_shoulder.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_shoulder.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_shoulder.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_elbow.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_elbow.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.left_elbow.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_elbow.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_elbow.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.near.right_elbow.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "left.wrist.head_x",
+    "group": "location",
+    "unit": "head_units",
+    "meaning": "Wrist offset from head centre using visible ear gap",
+    "experimental": false
+  },
+  {
+    "name": "left.wrist.head_y",
+    "group": "location",
+    "unit": "head_units",
+    "meaning": "Wrist offset from head centre using visible ear gap",
+    "experimental": false
+  },
+  {
+    "name": "right.present",
+    "group": "tracking",
+    "unit": "flag",
+    "meaning": "Hand landmarks available",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.index.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.index.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.index.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.index.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.index.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.index.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "right.index.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.index.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.index.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.index.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.index.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.index.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.base_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.middle_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.tip_flexion",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "One minus joint angle divided by pi; greater means more flexed",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.tip_to_root",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.tip_to_palm",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Three-dimensional within-hand gap; estimated hand depth only",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.tip_projection",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Tip projection along hand longitudinal axis from palm centre",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.direction_x",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.local_tip_x",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.direction_y",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.local_tip_y",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.direction_z",
+    "group": "finger_direction",
+    "unit": "unit_vector",
+    "meaning": "Base-to-tip ray in unmirrored camera axes; unreliable for folded fingers",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.local_tip_z",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip in rotating palm coordinates, for relative motion",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.thumb_index_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.thumb_middle_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.thumb_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.thumb_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.index_middle_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.index_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.index_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.middle_ring_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.middle_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.tips.ring_pinky_gap",
+    "group": "finger_proximity",
+    "unit": "palm_units",
+    "meaning": "Within-hand fingertip separation; small gap is not proven contact",
+    "experimental": false
+  },
+  {
+    "name": "right.spread.index_middle",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "right.spread.middle_ring",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "right.spread.ring_pinky",
+    "group": "finger_shape",
+    "unit": "fraction_pi",
+    "meaning": "Angle between neighbouring finger rays",
+    "experimental": false
+  },
+  {
+    "name": "right.hand_axis_x",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "right.hand_axis_y",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "right.hand_axis_z",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Hand longitudinal axis",
+    "experimental": false
+  },
+  {
+    "name": "right.palm_normal_winding_x",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "right.palm_normal_winding_y",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "right.palm_normal_winding_z",
+    "group": "orientation",
+    "unit": "unit_vector",
+    "meaning": "Ordered landmark cross-product; sign is NOT calibrated palm-facing direction",
+    "experimental": true
+  },
+  {
+    "name": "right.tilt_from_vertical",
+    "group": "orientation",
+    "unit": "degrees",
+    "meaning": "Undirected image-plane tilt: vertical zero, horizontal ninety",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.palm_relative_x",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.palm_relative_y",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.palm_relative_z",
+    "group": "finger_shape",
+    "unit": "palm_units",
+    "meaning": "Thumb tip in palm coordinates; front/side semantic labels need examples",
+    "experimental": false
+  },
+  {
+    "name": "right.wrist.body_x",
+    "group": "location",
+    "unit": "shoulder_units",
+    "meaning": "Wrist relative to shoulder midpoint; x image-right, y image-up",
+    "experimental": false
+  },
+  {
+    "name": "right.wrist.body_y",
+    "group": "location",
+    "unit": "shoulder_units",
+    "meaning": "Wrist relative to shoulder midpoint; x image-right, y image-up",
+    "experimental": false
+  },
+  {
+    "name": "right.wrist.body_depth_proxy",
+    "group": "depth_proxy",
+    "unit": "shoulder_units",
+    "meaning": "Pose wrist depth relative to shoulders; NOT independent hand-landmark z",
+    "experimental": true
+  },
+  {
+    "name": "right.near.forehead.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.forehead.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.forehead.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.lips.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.lips.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.lips.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.nose.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.nose.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.nose.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chin.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chin.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chin.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_ear.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_ear.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_ear.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_ear.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_ear.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_ear.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_cheek.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_cheek.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_cheek.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_cheek.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_cheek.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_cheek.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chest.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chest.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.chest.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_shoulder.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_shoulder.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_shoulder.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_shoulder.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_shoulder.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_shoulder.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_elbow.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_elbow.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.left_elbow.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_elbow.palm",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_elbow.tips",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.near.right_elbow.knuckles",
+    "group": "body_proximity",
+    "unit": "shoulder_units",
+    "meaning": "Minimum image-plane distance to visible body anchor; not physical touch",
+    "experimental": false
+  },
+  {
+    "name": "right.wrist.head_x",
+    "group": "location",
+    "unit": "head_units",
+    "meaning": "Wrist offset from head centre using visible ear gap",
+    "experimental": false
+  },
+  {
+    "name": "right.wrist.head_y",
+    "group": "location",
+    "unit": "head_units",
+    "meaning": "Wrist offset from head centre using visible ear gap",
+    "experimental": false
+  },
+  {
+    "name": "hands.wrist_gap",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane relative geometry; wrist offsets are left minus right",
+    "experimental": false
+  },
+  {
+    "name": "hands.wrist_horizontal_offset",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane relative geometry; wrist offsets are left minus right",
+    "experimental": false
+  },
+  {
+    "name": "hands.wrist_vertical_offset",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane relative geometry; wrist offsets are left minus right",
+    "experimental": false
+  },
+  {
+    "name": "hands.minimum_landmark_gap",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane relative geometry; wrist offsets are left minus right",
+    "experimental": false
+  },
+  {
+    "name": "hands.palm_gap",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane relative geometry; wrist offsets are left minus right",
+    "experimental": false
+  },
+  {
+    "name": "hands.pose_depth_order_proxy",
+    "group": "depth_proxy",
+    "unit": "shoulder_units",
+    "meaning": "Pose left wrist depth minus right wrist depth; not a calibrated front/back order",
+    "experimental": true
+  },
+  {
+    "name": "left.thumb.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "left.index.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "left.palm.near_other_wrist",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane palm-to-other-wrist gap",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "right.index.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.near_other_palm",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane gap to other palm centre; not wrapping or touch",
+    "experimental": false
+  },
+  {
+    "name": "right.palm.near_other_wrist",
+    "group": "two_hand_relation",
+    "unit": "shoulder_units",
+    "meaning": "Image-plane palm-to-other-wrist gap",
+    "experimental": false
+  },
+  {
+    "name": "head.nose_relative_x",
+    "group": "head_motion_proxy",
+    "unit": "ear_units",
+    "meaning": "Head-relative image geometry; a motion proxy, not verified yaw/pitch or a nod/shake label",
+    "experimental": true
+  },
+  {
+    "name": "head.nose_relative_y",
+    "group": "head_motion_proxy",
+    "unit": "ear_units",
+    "meaning": "Head-relative image geometry; a motion proxy, not verified yaw/pitch or a nod/shake label",
+    "experimental": true
+  },
+  {
+    "name": "head.ear_line_roll",
+    "group": "head_motion_proxy",
+    "unit": "degrees",
+    "meaning": "Head-relative image geometry; a motion proxy, not verified yaw/pitch or a nod/shake label",
+    "experimental": true
+  },
+  {
+    "name": "left.motion.velocity_x",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Timestamp-aware wrist derivative; camera-plane direction",
+    "experimental": false
+  },
+  {
+    "name": "left.motion.velocity_y",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Timestamp-aware wrist derivative; camera-plane direction",
+    "experimental": false
+  },
+  {
+    "name": "left.motion.speed",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Camera-plane wrist speed",
+    "experimental": false
+  },
+  {
+    "name": "left.motion.signed_turn_rate",
+    "group": "movement",
+    "unit": "radians_per_second",
+    "meaning": "Turning of wrist velocity: positive anticlockwise in unmirrored image; not proof of a complete circle",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "left.thumb.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "left.index.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "left.index.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "left.index.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "left.index.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "left.middle.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "left.ring.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "left.pinky.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "right.motion.velocity_x",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Timestamp-aware wrist derivative; camera-plane direction",
+    "experimental": false
+  },
+  {
+    "name": "right.motion.velocity_y",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Timestamp-aware wrist derivative; camera-plane direction",
+    "experimental": false
+  },
+  {
+    "name": "right.motion.speed",
+    "group": "movement",
+    "unit": "shoulder_units_per_second",
+    "meaning": "Camera-plane wrist speed",
+    "experimental": false
+  },
+  {
+    "name": "right.motion.signed_turn_rate",
+    "group": "movement",
+    "unit": "radians_per_second",
+    "meaning": "Turning of wrist velocity: positive anticlockwise in unmirrored image; not proof of a complete circle",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "right.thumb.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "right.index.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "right.index.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "right.index.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "right.index.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "right.middle.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "right.ring.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.relative_tip_speed",
+    "group": "finger_motion",
+    "unit": "palm_units_per_second",
+    "meaning": "Fingertip motion in rotating palm frame; distinguishes articulation from whole-hand translation",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.sway_extent",
+    "group": "finger_motion",
+    "unit": "palm_units",
+    "meaning": "Fingertip extent within a trailing half-second in palm coordinates",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.sway_reversals",
+    "group": "finger_motion",
+    "unit": "reversals_per_second",
+    "meaning": "Largest axis reversal rate in trailing half-second; a wiggle proxy, not a flailing label",
+    "experimental": false
+  },
+  {
+    "name": "right.pinky.shape_variation",
+    "group": "finger_motion",
+    "unit": "fraction_pi",
+    "meaning": "Largest joint-flexion standard deviation in trailing half-second; separates shape change from stable-shape sway",
+    "experimental": false
+  },
+  {
+    "name": "head.motion.x_velocity",
+    "group": "head_motion_proxy",
+    "unit": "ear_units_per_second",
+    "meaning": "Derivative of nose position relative to ears; NOT a verified nod/shake label",
+    "experimental": true
+  },
+  {
+    "name": "head.motion.y_velocity",
+    "group": "head_motion_proxy",
+    "unit": "ear_units_per_second",
+    "meaning": "Derivative of nose position relative to ears; NOT a verified nod/shake label",
+    "experimental": true
+  }
+]

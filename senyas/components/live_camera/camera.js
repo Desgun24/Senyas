@@ -72,7 +72,7 @@ async function startCamera() {
   controls();
   setStatus("Waiting for camera permission…");
   try {
-    const constraints = { width: { ideal: 640 }, height: { ideal: 360 }, aspectRatio: { ideal: 16 / 9 } };
+    const constraints = { width: { ideal: 640 }, height: { ideal: 360 }, aspectRatio: { ideal: 16 / 9 }, frameRate: { ideal: 30, max: 30 } };
     if (device.value) constraints.deviceId = { exact: device.value };
     else constraints.facingMode = "user";
     const acquired = await navigator.mediaDevices.getUserMedia({ video: constraints, audio: false });
@@ -100,7 +100,8 @@ async function startCamera() {
     document.getElementById("device-label").hidden = device.options.length < 2;
     starting = false;
     controls();
-    setStatus("Camera ready. Press Record 4-second sign when you are ready.");
+    const cameraFps = cameraTrack.getSettings().frameRate;
+    setStatus("Camera ready" + (cameraFps ? " · device reports " + Number(cameraFps).toFixed(1) + " FPS" : "") + ". Press Record 4-second sign when you are ready.");
   } catch (error) {
     if (token === runToken) stopCamera(cameraError(error));
   }
@@ -131,8 +132,20 @@ async function recordSign() {
     const started = performance.now();
     for (let index = 0; index < frameCount; index += 1) {
       const target = started + index * durationSeconds * 1000 / (frameCount - 1);
-      await delay(Math.max(0, target - performance.now()));
+      // Follow presentation callbacks directly at high rates. Delaying before
+      // requesting a callback can miss every second frame on some browsers.
+      if (frameCount > 32 && typeof video.requestVideoFrameCallback === "function") {
+        await Promise.race([
+          new Promise(resolve => video.requestVideoFrameCallback(resolve)),
+          delay(1000).then(() => { throw new Error("No new camera frame arrived. Please record again."); })
+        ]);
+      } else {
+        await delay(Math.max(0, target - performance.now()));
+      }
       if (token !== runToken) return;
+      // Stop the development recording by elapsed time, not by a promised
+      // frame rate. Slow cameras yield fewer samples and keep truthful timing.
+      if (frameCount > 32 && frames.length >= 2 && performance.now() - started >= durationSeconds * 1000) break;
       if (document.hidden || !stream || video.readyState < 2 || stream.getVideoTracks()[0].readyState !== "live") {
         throw new Error("The camera paused. Keep this tab active and record again.");
       }

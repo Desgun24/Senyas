@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "models": {
+    "decision_tree": {
+      "test_predictions_reproduced": 315,
+      "test_attempted": 315,
+      "test_rejected": 0,
+      "correct": 262,
+      "paths_verified": 315,
+      "accepted_metrics": {
+        "accuracy": 0.8317460317460318,
+        "macro_precision": 0.8740816326530612,
+        "macro_recall": 0.8317460317460317,
+        "macro_f1": 0.8278231292517007
+      },
+      "all_attempted_metrics": {
+        "accuracy": 0.8317460317460318,
+        "macro_precision": 0.8740816326530612,
+        "macro_recall": 0.8317460317460317,
+        "macro_f1": 0.8278231292517007
+      }
+    },
+    "extra_trees": {
+      "test_predictions_reproduced": 315,
+      "test_attempted": 315,
+      "test_rejected": 0,
+      "correct": 311,
+      "paths_verified": 94500,
+      "accepted_metrics": {
+        "accuracy": 0.9873015873015873,
+        "macro_precision": 0.9904761904761905,
+        "macro_recall": 0.9873015873015872,
+        "macro_f1": 0.9869387755102041
+      },
+      "all_attempted_metrics": {
+        "accuracy": 0.9873015873015873,
+        "macro_precision": 0.9904761904761905,
+        "macro_recall": 0.9873015873015872,
+        "macro_f1": 0.9869387755102041
+      }
+    }
+  },
+  "protected_files_verified": 22,
+  "model_weights_unchanged": true,
+  "preprocessing_unchanged": true,
+  "all_test_video_hashes_verified": 315,
+  "training_or_tuning_performed": false,
+  "test_duplicate_bytes": false,
+  "cross_split_duplicate_bytes": false
+}

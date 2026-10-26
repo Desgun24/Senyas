@@ -8,7 +8,7 @@ from streamlit.testing.v1 import AppTest
 import senyas.learning_app as ui
 from senyas.assessments import create_assessment
 from senyas.camera import CameraAttempt
-from senyas.features import ExtractionInfo
+from senyas.frozen_recognizer import PIPELINE_ID
 from senyas.progress import load_progress, save_progress, set_lesson_stage, upgrade_progress
 
 APP = Path(__file__).resolve().parents[1] / "app.py"
@@ -30,22 +30,25 @@ def mock_camera(monkeypatch):
     payload = {"capture_id": "test-capture", "context": None}
     enabled = [True]
 
-    def capture(context, processed_capture_id=None):
+    def capture(context, processed_capture_id=None, **kwargs):
         if payload["context"] is None:
             payload["context"] = context
         return payload if enabled[0] else None
 
     monkeypatch.setattr(ui, "live_camera", capture)
-    monkeypatch.setattr(ui, "decode_camera_attempt", lambda value, context: CameraAttempt(
+    monkeypatch.setattr(ui, "decode_camera_attempt", lambda value, context, **kwargs: CameraAttempt(
         value["capture_id"], context, [np.zeros((360, 640, 3), dtype=np.uint8)] * 32, 4
     ))
     extractor = MagicMock()
-    extractor.extract_frames.return_value = (
-        np.zeros(1630, dtype=np.float32), ExtractionInfo(32, 32, 32, 1, 7.75, 4, 10)
-    )
-    factory = MagicMock()
-    factory.return_value.__enter__.return_value = extractor
-    monkeypatch.setattr(ui, "LandmarkExtractor", factory)
+    artifact = ui.recognizer("Decision Tree")
+    vector = artifact["feature_preparation"].medians
+    from senyas.model import predict_vector, decision_trace
+    extractor.extract_frames.return_value = {
+        "prediction": predict_vector(artifact, vector), "trace": decision_trace(artifact, vector),
+        "extraction": {"frames": 32}, "imputed_features": [], "pipeline_id": PIPELINE_ID,
+        "model_sha256": artifact["runtime_sha256"],
+    }
+    monkeypatch.setattr(ui, "analyze_attempt", lambda artifact, attempt: extractor.extract_frames(attempt))
     return payload, enabled, extractor
 
 
@@ -153,7 +156,7 @@ def test_hidden_meaning_answer_and_completed_review(profile, monkeypatch):
             next(item for item in app.button if item.label == "Submit answer").click().run()
         else:
             payload["capture_id"] = f"capture-{index}"
-            payload["context"] = f"quiz:{active['id']}:{index}:Decision Tree"
+            payload["context"] = f"{PIPELINE_ID}:quiz:{active['id']}:{index}:Decision Tree"
             app.run()
             button(app, "Submit sign").click().run()
         assert not app.exception

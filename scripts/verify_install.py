@@ -8,8 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import mediapipe  # noqa: E402,F401
 from senyas.curriculum import load_lessons, bundled_video  # noqa: E402
-from senyas.features import LandmarkExtractor, temporal_feature_names  # noqa: E402
-from senyas.model import load_artifact, select_recognizer  # noqa: E402
+from senyas.frozen_recognizer import load_recognizer  # noqa: E402
+from senyas.sequences import SequenceExtractor  # noqa: E402
 
 
 def main():
@@ -21,12 +21,15 @@ def main():
     for clip in manifest['videos']:
         assert hashlib.sha256((ROOT / clip['video']).read_bytes()).hexdigest() == clip['sha256']
         assert clip['audio_tracks'] == 0
-    artifact = load_artifact(ROOT / 'artifacts/hybrid_recognizer.joblib')
-    assert artifact['feature_names'] == temporal_feature_names()
-    assert len(select_recognizer(artifact, 'Decision Tree')['model'].classes_) == 105
-    with LandmarkExtractor():
+    for name in ('Decision Tree', 'Extra Trees'):
+        artifact = load_recognizer(ROOT / 'artifacts/frozen', name)
+        assert len(artifact['feature_names']) == 3392
+    # Source checkouts can use Git's CRLF conversion; weights always use exact bytes.
+    for filename, expected in json.loads((ROOT / 'artifacts/frozen/manifest.json').read_text())['runtime_source_lf_sha256'].items():
+        assert hashlib.sha256((ROOT / filename).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == expected, filename
+    with SequenceExtractor(target_fps=30, max_image_side=480, model_complexity=1):
         pass
-    print('Startup check passed: 105 lessons, 10 levels, camera libraries, and recognition models.')
+    print('Startup check passed: 105 silent lessons, 10 levels, full camera tracker, both frozen 3,392-feature models and preprocessing hashes.')
 
 
 if __name__ == '__main__':

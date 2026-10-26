@@ -36,6 +36,15 @@ def test_camera_decodes_unmirrored_bgr_frames(camera_payload):
     np.testing.assert_allclose(attempt.frames[0][100, 500], [240, 20, 10], atol=3)
 
 
+def test_development_camera_accepts_actual_frame_count_and_preserves_timing(camera_payload):
+    camera_payload['frames']=[camera_payload['frames'][0]]*81
+    camera_payload['timestamps']=np.linspace(0,4,81).tolist()
+    attempt=decode_camera_attempt(camera_payload,'0:Decision Tree',expected_frame_count=(16,121))
+    assert len(attempt.frames)==81 and attempt.timestamps[-1]==4
+    with pytest.raises(ValueError,match='incomplete'):
+        decode_camera_attempt(camera_payload,'0:Decision Tree')
+
+
 @pytest.mark.parametrize("problem", ["stale", "incomplete", "timing", "paused", "corrupt", "size"])
 def test_camera_rejects_unusable_captures(camera_payload, problem):
     if problem == "stale":

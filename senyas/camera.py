@@ -26,40 +26,52 @@ class CameraAttempt:
     context: str
     frames: list[np.ndarray]
     duration_seconds: float
+    timestamps: np.ndarray | None = None
 
 
-def live_camera(context: str, processed_capture_id: str | None = None) -> dict | None:
+def live_camera(context: str, processed_capture_id: str | None = None, *, frame_count: int = FRAME_COUNT,
+                key: str = "senyas_live_camera") -> dict | None:
     return _camera(
         context=context,
         processed_capture_id=processed_capture_id,
         duration_seconds=CAPTURE_SECONDS,
-        frame_count=FRAME_COUNT,
-        key="senyas_live_camera",
+        frame_count=frame_count,
+        key=key,
         default=None,
     )
 
 
-def decode_camera_attempt(payload: dict, expected_context: str) -> CameraAttempt:
+def decode_camera_attempt(payload: dict, expected_context: str, *, expected_frame_count: int | tuple[int,int] = FRAME_COUNT) -> CameraAttempt:
     """Validate a complete capture and decode its unmirrored JPEG samples."""
     if not isinstance(payload, dict) or payload.get("context") != expected_context:
         raise ValueError("The target changed. Record a new signing attempt.")
     capture_id = payload.get("capture_id")
     if not isinstance(capture_id, str) or not 1 <= len(capture_id) <= 80:
         raise ValueError("The camera capture has no valid identifier. Please record again.")
+    if isinstance(expected_frame_count,int):
+        minimum_count=maximum_count=expected_frame_count
+    elif isinstance(expected_frame_count,tuple) and len(expected_frame_count)==2 and all(isinstance(value,int) for value in expected_frame_count):
+        minimum_count,maximum_count=expected_frame_count
+    else:
+        raise ValueError("Unsupported camera frame budget")
+    if not 2<=minimum_count<=maximum_count<=181:
+        raise ValueError("Unsupported camera frame budget")
     encoded = payload.get("frames")
     times = payload.get("timestamps")
-    if not isinstance(encoded, list) or len(encoded) != FRAME_COUNT:
+    if not isinstance(encoded, list) or not minimum_count<=len(encoded)<=maximum_count:
         raise ValueError("The camera capture was incomplete. Please record the full four seconds.")
-    if not isinstance(times, list) or len(times) != FRAME_COUNT:
+    frame_total=len(encoded)
+    if not isinstance(times, list) or len(times) != frame_total:
         raise ValueError("The camera capture has incomplete timing information.")
     timestamps = np.asarray(times, dtype=float)
-    if timestamps.shape != (FRAME_COUNT,) or not np.isfinite(timestamps).all():
+    if timestamps.shape != (frame_total,) or not np.isfinite(timestamps).all():
         raise ValueError("The camera capture has invalid timing information.")
     gaps = np.diff(timestamps)
     duration = float(timestamps[-1] - timestamps[0])
     if not (gaps > 0).all() or gaps.max() > 1.0 or not 3.0 <= duration <= 6.0:
         raise ValueError("The camera paused during recording. Keep this tab active and try again.")
-    if any(not isinstance(frame, str) for frame in encoded) or sum(map(len, encoded)) > 8_000_000:
+    budget = min(32_000_000, frame_total * 250_000)
+    if any(not isinstance(frame, str) for frame in encoded) or sum(map(len, encoded)) > budget:
         raise ValueError("The camera capture is invalid or too large. Please record again.")
 
     frames: list[np.ndarray] = []
@@ -73,4 +85,4 @@ def decode_camera_attempt(payload: dict, expected_context: str) -> CameraAttempt
                 frames.append(np.asarray(image.convert("RGB"))[:, :, ::-1].copy())
         except (binascii.Error, OSError) as exc:
             raise ValueError("A camera frame could not be read. Please record again.") from exc
-    return CameraAttempt(capture_id, expected_context, frames, duration)
+    return CameraAttempt(capture_id, expected_context, frames, duration, timestamps)

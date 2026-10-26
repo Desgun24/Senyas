@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import html
 import os
-from dataclasses import asdict
 from pathlib import Path
 
 import streamlit as st
@@ -12,10 +11,9 @@ from .assessments import create_assessment, submit_answer
 from .camera import decode_camera_attempt, live_camera
 from .config import PROJECT_ROOT, artifact_dir
 from .curriculum import bundled_video, categories, category_title, check_meaning, load_lessons
-from .explanations import DESCRIPTION_VERSION, TRACKING_FEATURES, describe_trace
-from .features import LandmarkExtractor
+from .semantic_explanations import DESCRIPTION_VERSION, describe_trace
+from .frozen_recognizer import PIPELINE_ID, analyze_attempt, load_recognizer
 from .media import play_lesson
-from .model import decision_trace, load_artifact, predict_vector, select_recognizer
 from .progress import category_status, lesson_stage, load_progress, now, record_attempt, save_progress, set_lesson_stage
 
 PAGES = ["Home", "Lessons", "Quiz", "Final Exam", "Progress"]
@@ -37,8 +35,8 @@ def curriculum():
 
 @st.cache_resource
 def recognizer(model_name: str):
-    path = artifact_dir() / "hybrid_recognizer.joblib"
-    return select_recognizer(load_artifact(path), model_name) if path.exists() else None
+    path = artifact_dir() / "frozen"
+    return load_recognizer(path, model_name) if (path / "manifest.json").exists() else None
 
 
 def esc(value) -> str:
@@ -72,6 +70,7 @@ def settings_dialog() -> None:
     selected = st.selectbox("Recognition model", MODELS, index=MODELS.index(settings["model"]), key="settings_model")
     developer = st.toggle("Developer mode", value=settings["developer_mode"], key="settings_developer")
     st.caption("Developer mode shows what the model noticed below the page content.")
+    st.caption("Decision Tree is the interpretable primary model. Extra Trees is the data-driven ensemble baseline; it has no single decision path.")
     if progress.get("active_assessment"):
         st.info("The current assessment keeps the model it started with. Changes apply to your next assessment and lesson practice.")
     if st.button("Save settings", type="primary", use_container_width=True):
@@ -150,23 +149,17 @@ def capture_sign(progress: dict, lesson, context: str, model_name: str, assessme
     if artifact is None:
         st.error("The recognition model is missing from this installation.")
         return None
-    payload = live_camera(context, st.session_state.get("camera_processed_capture_id"))
+    payload = live_camera(context, st.session_state.get("camera_processed_capture_id"), frame_count=121)
     if isinstance(payload, dict) and payload.get("context") == context and payload.get("capture_id") != st.session_state.get("camera_processed_capture_id"):
         st.session_state.camera_processed_capture_id = payload.get("capture_id")
         try:
-            attempt = decode_camera_attempt(payload, context)
+            attempt = decode_camera_attempt(payload, context, expected_frame_count=(16, 121))
             with st.spinner("Checking your sign…"):
-                with LandmarkExtractor(max_frames=32) as extractor:
-                    vector, extraction = extractor.extract_frames(attempt.frames, attempt.duration_seconds)
-                prediction = predict_vector(artifact, vector)
-                trace = decision_trace(artifact, vector)
-            if not all(rule["condition_holds"] for rule in trace["rules"]):
-                raise ValueError("The model's explanation could not be verified. Please record again.")
-            observations = {name: float(value) for name, value in zip(artifact["feature_names"], vector)
-                            if name in {rule["feature"] for rule in trace["rules"]} | TRACKING_FEATURES}
+                analysis = analyze_attempt(artifact, attempt)
+            prediction, trace = analysis["prediction"], analysis["trace"]
             correct = prediction["class_id"] == int(lesson["id"]) and not prediction["uncertain"]
             result = {"context": context, "capture_id": attempt.capture_id, "model": model_name,
-                      "prediction": prediction, "trace": trace, "extraction": asdict(extraction), "correct": correct}
+                      **analysis, "correct": correct}
             progress = record_attempt(progress, "copy", {
                 "target_id": int(lesson["id"]), "model": model_name, "predicted_id": prediction["class_id"],
                 "confidence": prediction["confidence"], "outcome": "uncertain" if prediction["uncertain"] else "matching" if correct else "different",
@@ -174,8 +167,10 @@ def capture_sign(progress: dict, lesson, context: str, model_name: str, assessme
             })
             progress["last_diagnostic"] = {
                 "context": context, "class_id": int(lesson["id"]), "model": model_name,
-                "assessment_id": assessment_id, "trace": trace, "descriptions": describe_trace(trace, observations),
-                "observations": observations, "description_version": DESCRIPTION_VERSION,
+                "assessment_id": assessment_id, "trace": trace,
+                "imputed_features": analysis["imputed_features"],
+                "pipeline_id": PIPELINE_ID, "model_sha256": analysis["model_sha256"],
+                "description_version": DESCRIPTION_VERSION,
             }
             commit(progress)
             st.session_state.camera_last_result = result
@@ -220,7 +215,7 @@ def lesson_page(progress: dict, lessons) -> None:
             st.rerun()
     elif stage == "copy":
         st.write("Start your camera, wait for the countdown, and copy this sign.")
-        context = f"lesson:{class_id}:{progress['settings']['model']}"
+        context = f"{PIPELINE_ID}:lesson:{class_id}:{progress['settings']['model']}"
         result = capture_sign(progress, lesson, context, progress["settings"]["model"])
         if result:
             if result["prediction"]["uncertain"]:
@@ -333,7 +328,7 @@ def assessment_page(progress: dict, lessons, final=False) -> None:
             st.subheader("Sign this word")
             st.header(word(lesson))
             st.write(str(lesson["filipino"]).capitalize())
-            context = f"quiz:{active['id']}:{index}:{active['model']}"
+            context = f"{PIPELINE_ID}:quiz:{active['id']}:{index}:{active['model']}"
             result = capture_sign(progress, lesson, context, active["model"], active["id"])
             if result:
                 st.success("Recording analyzed. Submit it or record another attempt.")
@@ -458,25 +453,23 @@ def developer_panel(progress: dict, lessons, page: str) -> None:
         if current_id != diagnostic["class_id"] or assessment_id:
             st.info("Record this word to see the explanation for this lesson.")
             return
+    if diagnostic.get("pipeline_id") != PIPELINE_ID:
+        st.info("This explanation came from an older model. Record a new sign with the current model.")
+        return
     trace = diagnostic["trace"]
     target = lessons.loc[lessons["id"].eq(diagnostic["class_id"])].iloc[0]
     st.caption(f"Latest analyzed attempt · {word(target)} · {category_title(target['category'])}")
+    if trace is None:
+        st.info("Extra Trees combines decisions from many trees. This baseline has no single decision path to display. Choose Decision Tree in Settings to inspect an actual path.")
+        return
     label_row = lessons.loc[lessons["id"].eq(trace["explainer_prediction"]["class_id"])].iloc[0]
-    if trace["trace_source"] == "decision_tree_primary":
-        st.write(f"Actual Decision Tree path · {word(label_row)}")
-    else:
-        st.write(f"Separate Decision Tree baseline · {word(label_row)}")
-        st.caption("Extra Trees made the recognition decision. These observations belong to the separate baseline tree.")
-    st.caption("Descriptions follow the recorded features and learned branches. Positions use the unmirrored image; changes between sampled frames are not speed measurements.")
-    observations = {rule["feature"]: rule["value"] for rule in trace["rules"]}
-    observations.update(diagnostic.get("observations", {}))
+    st.write(f"Actual Decision Tree path · {word(label_row)}")
+    st.caption("Descriptions follow the recorded features and learned branches. Positions use the unmirrored image; movement rates use actual frame timestamps.")
     try:
-        descriptions = describe_trace(trace, observations)
+        descriptions = describe_trace(trace, diagnostic.get("imputed_features", ()))
     except ValueError:
         st.warning("This saved explanation could not be verified. Record a new sign to see its explanation.")
         return
-    if "observations" not in diagnostic:
-        st.info("This older recording did not save full tracking coverage. Record again for verified hand-state descriptions.")
     if not descriptions:
         st.write("The tree reached its answer without another hand-feature check.")
     for observation in descriptions:
